@@ -117,24 +117,24 @@ if [ ! -f "$stepFile" ]; then
 sendFPScmd "setval DMch${DM_CHINDEX}disp${DM_DMINDEX}.DMindex ${DM_DMINDEX}"
 sendFPScmd "setval DMch${DM_CHINDEX}disp${DM_DMINDEX}.DMxsize 12"
 sendFPScmd "setval DMch${DM_CHINDEX}disp${DM_DMINDEX}.DMysize 12"
-sendFPScmd "setval DMch${DM_CHINDEX}disp${DM_DMINDEX}.procinfo.loopcntMax -1"
-sendFPScmd "setval DMch${DM_CHINDEX}disp${DM_DMINDEX}.procinfo.triggermode 4"
-sendFPScmd "setval DMch${DM_CHINDEX}disp${DM_DMINDEX}.procinfo.triggersname dm${DM_DMINDEX}disp00"
+#sendFPScmd "setval DMch${DM_CHINDEX}disp${DM_DMINDEX}.procinfo.loopcntMax -1"
+#sendFPScmd "setval DMch${DM_CHINDEX}disp${DM_DMINDEX}.procinfo.triggermode 3"
+#sendFPScmd "setval DMch${DM_CHINDEX}disp${DM_DMINDEX}.procinfo.triggersname dm${DM_DMINDEX}disp00"
 
-sendFPScmd "setval DMch${DM_CHINDEX}disp${DM_DMINDEX}.procinfo.RTprio 8"
-sendFPScmd "setval DMch${DM_CHINDEX}disp${DM_DMINDEX}.conf.taskset 0"
+#sendFPScmd "setval DMch${DM_CHINDEX}disp${DM_DMINDEX}.procinfo.RTprio 49"
+#sendFPScmd "setval DMch${DM_CHINDEX}disp${DM_DMINDEX}.conf.taskset 0"
 
 sendFPScmd "confwupdate DMch${DM_CHINDEX}disp-${DM_DMINDEX}"
 sendFPScmd "runstart DMch${DM_CHINDEX}disp-${DM_DMINDEX}"
 
 
 sendFPScmd "setval DMch${TTM_CHINDEX}disp${TTM_DMINDEX}.DMindex ${TTM_DMINDEX}"
-sendFPScmd "setval DMch${TTM_CHINDEX}disp${TTM_DMINDEX}.procinfo.loopcntMax -1"
-sendFPScmd "setval DMch${TTM_CHINDEX}disp${TTM_DMINDEX}.procinfo.triggermode 4"
-sendFPScmd "setval DMch${TTM_CHINDEX}disp${TTM_DMINDEX}.procinfo.triggersname dm${TTM_DMINDEX}disp00"
+#sendFPScmd "setval DMch${TTM_CHINDEX}disp${TTM_DMINDEX}.procinfo.loopcntMax -1"
+#sendFPScmd "setval DMch${TTM_CHINDEX}disp${TTM_DMINDEX}.procinfo.triggermode 3"
+#sendFPScmd "setval DMch${TTM_CHINDEX}disp${TTM_DMINDEX}.procinfo.triggersname dm${TTM_DMINDEX}disp00"
 
-sendFPScmd "setval DMch${TTM_CHINDEX}disp${TTM_DMINDEX}.procinfo.RTprio 4"
-sendFPScmd "setval DMch${TTM_CHINDEX}disp${TTM_DMINDEX}.conf.taskset 0"
+#sendFPScmd "setval DMch${TTM_CHINDEX}disp${TTM_DMINDEX}.procinfo.RTprio 49"
+#sendFPScmd "setval DMch${TTM_CHINDEX}disp${TTM_DMINDEX}.conf.taskset 0"
 
 sendFPScmd "confwupdate DMch${TTM_CHINDEX}disp-${TTM_DMINDEX}"
 sendFPScmd "runstart DMch${TTM_CHINDEX}disp-${TTM_DMINDEX}"
