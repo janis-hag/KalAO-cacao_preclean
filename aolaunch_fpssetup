@@ -1,0 +1,153 @@
+#!/bin/bash
+
+set -euo pipefail
+
+MSdescr="KalAO loop execution script"
+
+source milk-script-std-config
+
+##### Prerequisites
+RequiredCommands=( tmux milk )
+RequiredFiles=()
+RequiredDirs=()
+
+##### parse arguments
+source milk-argparse
+
+##### Load infos for dm
+
+DM_CONFNAME="dmloop"
+
+DM_WORKDIR=$(<${DM_CONFNAME}-conf/WORKDIR)
+DM_LOOPNAME=$(<${DM_CONFNAME}-conf/LOOPNAME)
+
+source ${DM_CONFNAME}-conf/cacaovars.${DM_LOOPNAME}.bash
+
+DM_LOOPWORKDIR=$CACAO_LOOPWORKDIR
+DM_CHINDEX=2
+DM_DMINDEX=$CACAO_DMINDEX
+DM_LOOPNUMBER=$CACAO_LOOPNUMBER
+DM_WFSSTREAM=$CACAO_WFSSTREAM
+
+##### Load infos for ttm
+
+TTM_CONFNAME="ttmloop"
+
+TTM_WORKDIR=$(<${TTM_CONFNAME}-conf/WORKDIR)
+TTM_LOOPNAME=$(<${TTM_CONFNAME}-conf/LOOPNAME)
+
+source ${TTM_CONFNAME}-conf/cacaovars.${TTM_LOOPNAME}.bash
+
+TTM_LOOPWORKDIR=$CACAO_LOOPWORKDIR
+TTM_CHINDEX=2
+TTM_DMINDEX=$CACAO_DMINDEX
+TTM_LOOPNUMBER=$CACAO_LOOPNUMBER
+
+#####
+
+if [ $DM_WORKDIR != $TTM_WORKDIR ]
+then
+	echo "DM and TTM workdir should be the same"
+	exit 1
+fi
+
+WORKDIR=$TTM_WORKDIR
+
+function sendFPScmd {
+  echo "SENDING: $1"
+  echo "$1" >> ${MILK_SHM_DIR}/${TTM_CONFNAME}_fpsCTRL.fifo
+}
+
+function waitFile {
+	echo -n "Waiting $1 "
+	while [ ! -f $1 ] ;
+	do
+		echo -n "."
+      	sleep 0.1
+	done
+	echo " Done"
+	sleep 0.1
+}
+
+# ======================================================================
+# Start all processes
+# ======================================================================
+
+stepFile="step.aolaunch.START"
+if [ ! -f "$stepFile" ]; then
+
+##### Launch processes common to both loops
+
+NUVU_SDK_HARDWARE_CONCURRENCY=1
+export NUVU_SDK_HARDWARE_CONCURRENCY=1
+
+mkdir -p ${WORKDIR}/hardware-workdir
+pushd ${WORKDIR}/hardware-workdir
+
+milk-fpsinit -e cacao -C -f ~/kalao-cacao/src/cacao/src/KalAO_BMC/fpslist.txt
+NUVU_SDK_HARDWARE_CONCURRENCY=1 milk-fpsinit -e cacao -C -f ~/kalao-cacao/src/cacao/src/KalAO_Nuvu/fpslist.txt
+milk-fpsinit -e cacao -C -f ~/kalao-cacao/src/cacao/src/KalAO_SHWFS/fpslist.txt
+
+popd
+
+cp -R hardware-conf/* ${WORKDIR}/hardware-workdir
+
+##### Launch processes dm loop
+
+cacao-task-manager -X 4 "${DM_CONFNAME}"
+
+##### Launch processes dm loop
+
+cacao-task-manager -X 4 "${TTM_CONFNAME}"
+
+
+
+##### Load dm flat
+
+waitFile "${MILK_SHM_DIR}/dm${DM_DMINDEX}disp00.im.shm"
+
+pushd ${WORKDIR}/hardware-workdir
+
+cacao << EOF
+loadfits "flat_dm.fits" dmflat
+readshmim dm${DM_DMINDEX}disp00
+cpsh dmflat dm${DM_DMINDEX}disp00
+exitCLI
+EOF
+
+popd
+
+touch ${stepFile}
+exit
+else
+echo "found ${stepFile} -> skipping"
+fi
+
+
+
+# ======================================================================
+# Close AO loop
+# ======================================================================
+
+stepFile="step.aolaunch.LOOPRUN"
+if [ ! -f "$stepFile" ]; then
+
+sendFPScmd "waitonrunOFF"
+
+pushd ${WORKDIR}/${DM_LOOPWORKDIR}
+
+cacao << EOF
+loadfits "fps.compsCM-1.datadir/sCMat00.fits" sCMat00_1
+cpsh sCMat00_1 aol1_CMat
+exitCLI
+EOF
+
+popd
+
+sendFPScmd "confwupdate loopRUN-${DM_LOOPNUMBER}"
+
+touch ${stepFile}
+exit
+else
+echo "found ${stepFile} -> skipping"
+fi
