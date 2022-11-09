@@ -1,0 +1,1 @@
+flat/flat_%02ldC_%02ldrom_%01ldb_%04ldg.fits  # 20221109073718.094938385        2 [3054873 3054873] InputCommandFile

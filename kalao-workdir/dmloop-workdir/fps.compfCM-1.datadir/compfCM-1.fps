@@ -1,0 +1,45 @@
+# TIMESTRING 2022-10-21T04:21:43.958631009
+# PID        1857354
+# TID        1857354
+# root dir   /home/kalao/kalao-cacao/workdir/kalao-workdir/dmloop-workdir
+#
+compfCM-1.conf.timestring                STRING     undef
+compfCM-1.conf.label                     STRING     
+compfCM-1.conf.datadir                   DIRNAME    fps.compfCM-1.datadir
+compfCM-1.conf.confdir                   DIRNAME    fps.compfCM-1.confdir
+compfCM-1.conf.archivedir                DIRNAME    NULLDIR
+compfCM-1.procinfo.RTprio                INT64      0 -1 49 20
+compfCM-1.procinfo.cset                  STRING     system
+compfCM-1.procinfo.taskset               STRING     1-127
+compfCM-1.procinfo.NBthread              INT64      1 0 50 1
+compfCM-1.procinfo.enabled               ONOFF      ON
+compfCM-1.procinfo.loopcntMax            INT64      206158430232 -1 5000000 1
+compfCM-1.procinfo.triggermode           INT64      0 -1 10 0
+compfCM-1.procinfo.triggersname          STREAMNAME 
+compfCM-1.procinfo.semindexrequested     INT64      0 -1 10 0
+compfCM-1.AOloopindex                    INT64      1 0 10 0
+compfCM-1.SVDlim                         FLOAT64    0.010000 0.000001 1.000000 0.010000
+compfCM-1.CPAmax                         FLOAT64    10.000000 0.100000 100.000000 10.000000
+compfCM-1.deltaCPA                       FLOAT64    0.800000 0.100000 2.000000 0.800000
+compfCM-1.align.CX                       FLOAT64    5.500000 0.000000 2000.000000 0.000000
+compfCM-1.align.CY                       FLOAT64    5.500000 0.000000 2000.000000 0.000000
+compfCM-1.align.ID                       FLOAT64    0.600000 0.000000 2000.000000 0.000000
+compfCM-1.align.OD                       FLOAT64    5.400000 0.000000 2000.000000 0.000000
+compfCM-1.DMxsize                        INT64      12 1 2000 10
+compfCM-1.DMysize                        INT64      12 1 2000 10
+compfCM-1.FPS_zRMacqu                    FPSNAME   acqlin_zRM-1
+compfCM-1.FPS_loRMacqu                   FPSNAME   acqlin_loRM-1
+compfCM-1.FPS_DMcomb                     FPSNAME   DMch2disp-01
+compfCM-1.DMslaved                       FITSFILENAME   fps.acqlin_zRM-1.datadir/dmslaved.fits
+compfCM-1.zrespM                         FITSFILENAME   fps.acqlin_zRM-1.datadir/zrespM_mn.fits
+compfCM-1.DMmaskRM                       FITSFILENAME   fps.acqlin_zRM-1.datadir/dmmask_mksl.fits
+compfCM-1.WFSmask                        FITSFILENAME   fps.acqlin_zRM-1.datadir/wfsmask_mkm.fits
+compfCM-1.loRM                           FITSFILENAME   null
+compfCM-1.loRMmodes                      FITSFILENAME   null
+compfCM-1.option.extrablockM             FITSFILENAME   NULLFITS
+compfCM-1.option.exclmodes               FITSFILENAME   NULLFITS
+compfCM-1.upRMfiles                      ONOFF      OFF
+compfCM-1.upAlign                        ONOFF      OFF
+compfCM-1.out.dirname                    DIRNAME    NULLDIR
+compfCM-1.out.label                      STRING     NULLSTRING
+compfCM-1.out.timestring                 STRING     NULLSTRING

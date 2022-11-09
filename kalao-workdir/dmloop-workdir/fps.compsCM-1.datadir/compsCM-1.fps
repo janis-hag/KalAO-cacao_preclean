@@ -1,0 +1,25 @@
+# TIMESTRING 2022-06-27T19:27:08.239867327
+# PID        151307
+# TID        151307
+# root dir   /home/kalao/kalao-cacao/workdir/kalao-workdir/dmloop-workdir
+#
+compsCM-1.conf.timestring                STRING     undef
+compsCM-1.conf.label                     STRING     
+compsCM-1.conf.datadir                   DIRNAME    fps.compsCM-1.datadir
+compsCM-1.conf.confdir                   DIRNAME    fps.compsCM-1.confdir
+compsCM-1.conf.archivedir                DIRNAME    NULLDIR
+compsCM-1.procinfo.RTprio                INT64      0 -1 49 20
+compsCM-1.procinfo.cset                  STRING     system
+compsCM-1.procinfo.taskset               STRING     1-127
+compsCM-1.procinfo.NBthread              INT64      1 0 50 1
+compsCM-1.procinfo.enabled               ONOFF      ON
+compsCM-1.procinfo.loopcntMax            INT64      1 -1 5000000 1
+compsCM-1.procinfo.triggermode           INT64      0 -1 10 0
+compsCM-1.procinfo.triggersname          STREAMNAME ï
+compsCM-1.procinfo.semindexrequested     INT64      0 -1 10 0
+compsCM-1.loop                           INT64      1 0 10 0
+compsCM-1.SVDlim                         FLOAT64    0.010000 0.000000 1.000000 0.001000
+compsCM-1.fname_respM                    FILENAME   fps.acqlin_zRM-1.datadir/zrespM_mn.fits
+compsCM-1.GPUmode                        INT64      0 0 1 0
+compsCM-1.out.label                      STRING     NULLSTRING
+compsCM-1.out.timestring                 STRING     NULLSTRING

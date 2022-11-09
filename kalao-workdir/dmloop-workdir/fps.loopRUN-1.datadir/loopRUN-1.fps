@@ -1,0 +1,31 @@
+# TIMESTRING 2022-06-12T09:03:48.186651925
+# PID        1971871
+# TID        1971871
+# root dir   /home/kalao/kalao-cacao/workdir/kalao-workdir/dmloop-workdir
+#
+loopRUN-1.conf.timestring                STRING     2022-06-12T06:50:12.840836Z
+loopRUN-1.conf.label                     STRING     
+loopRUN-1.conf.datadir                   DIRNAME    fps.loopRUN-1.datadir
+loopRUN-1.conf.confdir                   DIRNAME    fps.loopRUN-1.confdir
+loopRUN-1.conf.archivedir                DIRNAME    NULLDIR
+loopRUN-1.procinfo.RTprio                INT64      49 -1 49 49
+loopRUN-1.procinfo.cset                  STRING     system
+loopRUN-1.procinfo.taskset               STRING     1-127
+loopRUN-1.procinfo.NBthread              INT64      1 0 50 1
+loopRUN-1.procinfo.enabled               ONOFF      ON
+loopRUN-1.procinfo.loopcntMax            INT64      -1 -1 5000000 -1
+loopRUN-1.procinfo.triggermode           INT64      3 -1 10 0
+loopRUN-1.procinfo.triggersname          STREAMNAME aol1_imWFS1
+loopRUN-1.procinfo.semindexrequested     INT64      0 -1 10 0
+loopRUN-1.loop                           INT64      1 0 99 0
+loopRUN-1.semwaitindex                   INT64      1 0 10 1
+loopRUN-1.wfsrefON                       ONOFF      OFF
+loopRUN-1.sn_wfs                         STREAMNAME aol1_imWFS1
+loopRUN-1.sn_cmat                        STREAMNAME aol1_CMat
+loopRUN-1.sn_DMout                       STREAMNAME aol1_dmC
+loopRUN-1.loopgain                       FLOAT64    0.000000 0.000000 1.500000 0.001000
+loopRUN-1.loopmult                       FLOAT64    0.960000 0.000000 1.500000 0.001000
+loopRUN-1.maxlim                         FLOAT64    2.000000 0.000000 1000.000000 1.000000
+loopRUN-1.loopON                         ONOFF      ON
+loopRUN-1.loopNBstep                     INT64      0 -1 0 0
+loopRUN-1.loopZERO                       ONOFF      OFF

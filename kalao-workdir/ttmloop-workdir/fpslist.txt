@@ -1,0 +1,13 @@
+streamDelay    streamdelay         02
++milkcudacomp
+simmvmgpu      cuda.MVMmextrmodes       2
+mlat           cacaopt.mlat     2
+acquWFS           cacaoio.acquireWFS     2
+acqlin_zRM           cacaoac.aolmeaslWFSrespC     2
+compsCM         cacaocc.aolRM2CM       2
+loopRUN         cacao.aolrun       2
++milkcudacomp
+wfs2cmodeval         cuda.MVMmextrmodes       2
+mfilt         cacao.modalfilter       2
++milkcudacomp
+mvalC2dm         cuda.MVMmextrmodes       2

@@ -1,0 +1,29 @@
+# TIMESTRING 2022-06-15T09:28:50.292383201
+# PID        3151977
+# TID        3151977
+# root dir   /home/kalao/kalao-cacao/workdir/kalao-workdir/dmloop-workdir
+#
+mvalC2dm-1.conf.timestring               STRING     undef
+mvalC2dm-1.conf.label                    STRING     
+mvalC2dm-1.conf.datadir                  DIRNAME    fps.mvalC2dm-1.datadir
+mvalC2dm-1.conf.confdir                  DIRNAME    fps.mvalC2dm-1.confdir
+mvalC2dm-1.conf.archivedir               DIRNAME    NULLDIR
+mvalC2dm-1.procinfo.RTprio               INT64      0 -1 49 20
+mvalC2dm-1.procinfo.cset                 STRING     system
+mvalC2dm-1.procinfo.taskset              STRING     1-127
+mvalC2dm-1.procinfo.NBthread             INT64      1 0 50 1
+mvalC2dm-1.procinfo.enabled              ONOFF      ON
+mvalC2dm-1.procinfo.loopcntMax           INT64      -1 -1 5000000 1
+mvalC2dm-1.procinfo.triggermode          INT64      3 -1 10 0
+mvalC2dm-1.procinfo.triggersname         STREAMNAME aol1_modevalDM
+mvalC2dm-1.procinfo.semindexrequested    INT64      0 -1 10 0
+mvalC2dm-1.insname                       STREAMNAME aol1_modevalDM
+mvalC2dm-1.immodes                       STREAMNAME aol1_DMmodes
+mvalC2dm-1.outcoeff                      STREAMNAME aol1_dmC
+mvalC2dm-1.outinit                       ONOFF      OFF
+mvalC2dm-1.option.PROCESS                ONOFF      OFF
+mvalC2dm-1.option.TRACEMODE              ONOFF      OFF
+mvalC2dm-1.option.MODENORM               ONOFF      OFF
+mvalC2dm-1.option.sname_intot            STREAMNAME NULL
+mvalC2dm-1.option.sname_refin            STREAMNAME NULL
+mvalC2dm-1.option.sname_refout           STREAMNAME 

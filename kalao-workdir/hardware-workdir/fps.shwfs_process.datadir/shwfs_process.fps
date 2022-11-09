@@ -1,0 +1,27 @@
+# TIMESTRING 2022-06-12T08:53:23.606970624
+# PID        1971871
+# TID        1971871
+# root dir   /home/kalao/kalao-cacao/workdir/kalao-workdir/hardware-workdir
+#
+shwfs_process.conf.timestring            STRING     2022-06-12T08:16:22.228445Z
+shwfs_process.conf.label                 STRING     
+shwfs_process.conf.datadir               DIRNAME    fps.shwfs_process.datadir
+shwfs_process.conf.confdir               DIRNAME    fps.shwfs_process.confdir
+shwfs_process.conf.archivedir            DIRNAME    NULLDIR
+shwfs_process.procinfo.RTprio            INT64      0 -1 49 0
+shwfs_process.procinfo.cset              STRING     system
+shwfs_process.procinfo.taskset           STRING     1-127
+shwfs_process.procinfo.NBthread          INT64      1 0 50 1
+shwfs_process.procinfo.enabled           ONOFF      ON
+shwfs_process.procinfo.loopcntMax        INT64      -1 -1 5000000 -1
+shwfs_process.procinfo.triggermode       INT64      3 -1 10 3
+shwfs_process.procinfo.triggersname      STREAMNAME nuvu_stream
+shwfs_process.procinfo.semindexrequested INT64      0 -1 10 0
+shwfs_process.outWFS                     STREAMNAME shwfs_slopes
+shwfs_process.spotcoords                 FILENAME   spots.txt
+shwfs_process.algorithm                  INT64      0 0 1 139746434042592
+shwfs_process.flux_averagecoeff          FLOAT32    0.100000 0.000000 1.000000 317219263045987553360662816431800320.000000
+shwfs_process.flux_subaperture           FLOAT32    144141.390625 0.000000 35308544.000000 317219263045987553360662816431800320.000000
+shwfs_process.residual                   FLOAT32    0.154414 0.000000 35308544.000000 317219263045987553360662816431800320.000000
+shwfs_process.slope_x                    FLOAT32    0.097910 0.000000 35308544.000000 317219263045987553360662816431800320.000000
+shwfs_process.slope_y                    FLOAT32    0.078562 0.000000 35308544.000000 317219263045987553360662816431800320.000000

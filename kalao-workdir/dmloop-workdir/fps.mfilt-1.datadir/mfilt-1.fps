@@ -1,0 +1,40 @@
+# TIMESTRING 2022-06-16T05:54:29.613966064
+# PID        3151977
+# TID        3151977
+# root dir   /home/kalao/kalao-cacao/workdir/kalao-workdir/dmloop-workdir
+#
+mfilt-1.conf.timestring                  STRING     2022-06-15T22:51:56.831600Z
+mfilt-1.conf.label                       STRING     
+mfilt-1.conf.datadir                     DIRNAME    fps.mfilt-1.datadir
+mfilt-1.conf.confdir                     DIRNAME    fps.mfilt-1.confdir
+mfilt-1.conf.archivedir                  DIRNAME    NULLDIR
+mfilt-1.procinfo.RTprio                  INT64      0 -1 49 0
+mfilt-1.procinfo.cset                    STRING     system
+mfilt-1.procinfo.taskset                 STRING     1-127
+mfilt-1.procinfo.NBthread                INT64      1 0 50 1
+mfilt-1.procinfo.enabled                 ONOFF      ON
+mfilt-1.procinfo.loopcntMax              INT64      -1 -1 5000000 -1
+mfilt-1.procinfo.triggermode             INT64      3 -1 10 3
+mfilt-1.procinfo.triggersname            STREAMNAME aol1_modevalWFS
+mfilt-1.procinfo.semindexrequested       INT64      0 -1 10 0
+mfilt-1.inmval                           STREAMNAME aol1_modevalWFS
+mfilt-1.outmval                          STREAMNAME aol1_modevalDM
+mfilt-1.loopON                           ONOFF      ON
+mfilt-1.loopNBstep                       INT64      -1 -2397065588119582976 140727783642752 139711825159876
+mfilt-1.loopZERO                         ONOFF      OFF
+mfilt-1.loopgain                         FLOAT32    1.000000 -nan 0.025608 -6770253843146997760.000000
+mfilt-1.loopmult                         FLOAT32    0.980000 -nan 0.025608 -6770253843146997760.000000
+mfilt-1.looplimit                        FLOAT32    8.000000 -nan 0.025608 -6770253843146997760.000000
+mfilt-1.comp.OLmodes                     ONOFF      OFF
+mfilt-1.comp.latencyfr                   FLOAT32    1.700000 -nan 0.025608 -6770253843146997760.000000
+mfilt-1.comp.tbuff                       ONOFF      OFF
+mfilt-1.auxDMmval.enable                 ONOFF      OFF
+mfilt-1.auxDMmval.mixfact                FLOAT32    1.000000 -nan 0.025608 -6770253843146997760.000000
+mfilt-1.auxDMmval.modulate               ONOFF      OFF
+mfilt-1.auxDMmval.modperiod              FLOAT32    20.000000 -nan 0.025608 -6770253843146997760.000000
+mfilt-1.PF.enable                        ONOFF      OFF
+mfilt-1.PF.mixcoeff                      FLOAT32    0.300000 -nan 0.025608 -6770253843146997760.000000
+mfilt-1.autoloop.enable                  ONOFF      OFF
+mfilt-1.autoloop.sleep                   FLOAT32    0.001000 -nan 0.025608 -6770253843146997760.000000
+mfilt-1.selfRM.enable                    ONOFF      OFF
+mfilt-1.selfRM.pokeampl                  FLOAT32    0.050000 -nan 0.025608 -6770253843146997760.000000
