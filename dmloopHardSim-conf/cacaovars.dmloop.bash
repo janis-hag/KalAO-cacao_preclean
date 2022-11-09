@@ -28,7 +28,7 @@ export CACAO_LOOPDATALOGDIR="$(pwd)/datalogdir"
 # DM combination
 # Manages mutipe DM channels
 #
-export CACAO_FPSPROC_DMCOMB="ON"
+export CACAO_FPSPROC_DMCH2DISP="ON"
 
 # Delay stream: emulates time lag in hardware
 # Used to simulate a time lag
@@ -81,4 +81,3 @@ export CACAO_FPSPROC_MODALFILTERING="ON"
 
 # Compute DM command from control mode values
 export CACAO_FPSPROC_MVMGPU_CMODEVAL2DM="ON"
-
