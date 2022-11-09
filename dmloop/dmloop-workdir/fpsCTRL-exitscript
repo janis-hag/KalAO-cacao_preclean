@@ -1,0 +1,38 @@
+# /home/kalao/kalao-cacao/workdir/dmloop
+find /milk/shm -type l -name "fpslog.*-DMch2disp-01" -exec sh -c 'rm $(readlink $1)' _ {} \;
+find /milk/shm -type l -name "fpslog.*-DMch2disp-01" -delete
+find /milk/shm -type l -name "fpslog.*-streamDelay-01" -exec sh -c 'rm $(readlink $1)' _ {} \;
+find /milk/shm -type l -name "fpslog.*-streamDelay-01" -delete
+find /milk/shm -type l -name "fpslog.*-+milkcudacomp" -exec sh -c 'rm $(readlink $1)' _ {} \;
+find /milk/shm -type l -name "fpslog.*-+milkcudacomp" -delete
+find /milk/shm -type l -name "fpslog.*-simmvmgpu-1" -exec sh -c 'rm $(readlink $1)' _ {} \;
+find /milk/shm -type l -name "fpslog.*-simmvmgpu-1" -delete
+find /milk/shm -type l -name "fpslog.*-mlat-1" -exec sh -c 'rm $(readlink $1)' _ {} \;
+find /milk/shm -type l -name "fpslog.*-mlat-1" -delete
+find /milk/shm -type l -name "fpslog.*-acquWFS-1" -exec sh -c 'rm $(readlink $1)' _ {} \;
+find /milk/shm -type l -name "fpslog.*-acquWFS-1" -delete
+find /milk/shm -type l -name "fpslog.*-acqlin_zRM-1" -exec sh -c 'rm $(readlink $1)' _ {} \;
+find /milk/shm -type l -name "fpslog.*-acqlin_zRM-1" -delete
+find /milk/shm -type l -name "fpslog.*-acqlin_loRM-1" -exec sh -c 'rm $(readlink $1)' _ {} \;
+find /milk/shm -type l -name "fpslog.*-acqlin_loRM-1" -delete
+find /milk/shm -type l -name "fpslog.*-+milkZernikePolyn;milkcudacomp" -exec sh -c 'rm $(readlink $1)' _ {} \;
+find /milk/shm -type l -name "fpslog.*-+milkZernikePolyn;milkcudacomp" -delete
+find /milk/shm -type l -name "fpslog.*-compfCM-1" -exec sh -c 'rm $(readlink $1)' _ {} \;
+find /milk/shm -type l -name "fpslog.*-compfCM-1" -delete
+find /milk/shm -type l -name "fpslog.*-compsCM-1" -exec sh -c 'rm $(readlink $1)' _ {} \;
+find /milk/shm -type l -name "fpslog.*-compsCM-1" -delete
+find /milk/shm -type l -name "fpslog.*-modesextractWFSGPU-1" -exec sh -c 'rm $(readlink $1)' _ {} \;
+find /milk/shm -type l -name "fpslog.*-modesextractWFSGPU-1" -delete
+find /milk/shm -type l -name "fpslog.*-loopRUN-1" -exec sh -c 'rm $(readlink $1)' _ {} \;
+find /milk/shm -type l -name "fpslog.*-loopRUN-1" -delete
+find /milk/shm -type l -name "fpslog.*-+milkcudacomp" -exec sh -c 'rm $(readlink $1)' _ {} \;
+find /milk/shm -type l -name "fpslog.*-+milkcudacomp" -delete
+find /milk/shm -type l -name "fpslog.*-wfs2cmodeval-1" -exec sh -c 'rm $(readlink $1)' _ {} \;
+find /milk/shm -type l -name "fpslog.*-wfs2cmodeval-1" -delete
+find /milk/shm -type l -name "fpslog.*-mfilt-1" -exec sh -c 'rm $(readlink $1)' _ {} \;
+find /milk/shm -type l -name "fpslog.*-mfilt-1" -delete
+find /milk/shm -type l -name "fpslog.*-+milkcudacomp" -exec sh -c 'rm $(readlink $1)' _ {} \;
+find /milk/shm -type l -name "fpslog.*-+milkcudacomp" -delete
+find /milk/shm -type l -name "fpslog.*-mvalC2dm-1" -exec sh -c 'rm $(readlink $1)' _ {} \;
+find /milk/shm -type l -name "fpslog.*-mvalC2dm-1" -delete
+tmux kill-session -t dmloop_fpsCTRL

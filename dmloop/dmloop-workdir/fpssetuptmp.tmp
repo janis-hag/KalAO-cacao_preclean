@@ -1,0 +1,33 @@
+# set function parameters
+# string 1 will be replaced by loop number
+
+setval streamDelay-01.delaysec 0.001
+setval streamDelay-01.option.timeavemode 1
+setval streamDelay-01.option.timeavedtns 1000
+
+setval acquWFS-1.comp.darksub ON
+setval acquWFS-1.comp.WFSnormalize OFF
+setval acquWFS-1.comp.imtotal OFF
+setval acquWFS-1.comp.normwfsim ON
+
+setval acqlin_zRM-1.procinfo.RTprio 1
+setval acqlin_zRM-1.procinfo.loopcntMax 1
+setval acqlin_zRM-1.procinfo.triggermode 1
+setval acqlin_zRM-1.procinfo.triggersname NULL
+setval acqlin_zRM-1.procinfo.semindexrequested 0
+setval acqlin_zRM-1.procinfo.triggerdelay 0.0
+setval acqlin_zRM-1.procinfo.triggertimeout 0.0
+
+setval acqlin_zRM-1.normalize OFF
+setval acqlin_zRM-1.timing.NBexcl 2
+
+setval acqlin_loRM-1.procinfo.RTprio 1
+setval acqlin_loRM-1.procinfo.loopcntMax 1
+setval acqlin_loRM-1.procinfo.triggermode 1
+setval acqlin_loRM-1.procinfo.triggersname NULL
+setval acqlin_loRM-1.procinfo.semindexrequested 0
+setval acqlin_loRM-1.procinfo.triggerdelay 0.0
+setval acqlin_loRM-1.procinfo.triggertimeout 0.0
+
+setval acqlin_loRM-1.normalize OFF
+setval acqlin_loRM-1.timing.NBexcl 2

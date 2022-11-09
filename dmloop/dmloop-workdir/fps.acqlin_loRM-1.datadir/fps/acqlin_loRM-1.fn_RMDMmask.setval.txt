@@ -1,0 +1,1 @@
+./fps.acqlin_zRM-1.datadir/dmmask_mkm.fits  # 20221109081558.862902897        1 [3083137 3083137] InputCommandFile

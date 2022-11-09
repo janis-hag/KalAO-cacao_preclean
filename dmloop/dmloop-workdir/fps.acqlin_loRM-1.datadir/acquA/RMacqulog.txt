@@ -1,0 +1,10 @@
+loop                  1
+delayfr               0
+delayRM1us            0
+NBave                 1
+NBexcl                2
+IDpokeC_name          dmpokeC2a
+normalize             0
+AOinitMode            0
+NBcycle               2
+SequInitMode          2
