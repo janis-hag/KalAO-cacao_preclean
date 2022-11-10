@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-MSdescr="KalAO loop execution script"
+MSdescr="KalAO hardware execution script"
 
 source milk-script-std-config
 
@@ -16,7 +16,7 @@ source milk-argparse
 
 ##### Load infos for dm
 
-DM_CONFNAME="dmloop"
+DM_CONFNAME="kalaohardware"
 
 DM_WORKDIR=$(<${DM_CONFNAME}-conf/WORKDIR)
 DM_LOOPNAME=$(<${DM_CONFNAME}-conf/LOOPNAME)
@@ -78,19 +78,17 @@ if [ ! -f "$stepFile" ]; then
 
 ##### Launch processes common to both loops
 
-NUVU_SDK_HARDWARE_CONCURRENCY=1
-export NUVU_SDK_HARDWARE_CONCURRENCY=1
 
 mkdir -p ${WORKDIR}/hardware-workdir
 pushd ${WORKDIR}/hardware-workdir
 
 milk-fpsinit -e cacao -C -f ~/kalao-cacao/src/cacao/src/KalAO_BMC/fpslist.txt
-NUVU_SDK_HARDWARE_CONCURRENCY=1 milk-fpsinit -e cacao -C -f ~/kalao-cacao/src/cacao/src/KalAO_Nuvu/fpslist.txt
+milk-fpsinit -e cacao -C -f ~/kalao-cacao/src/cacao/src/KalAO_Nuvu/fpslist.txt
 milk-fpsinit -e cacao -C -f ~/kalao-cacao/src/cacao/src/KalAO_SHWFS/fpslist.txt
 
 popd
 
-cp -R hardware-conf/* ${WORKDIR}/hardware-workdir
+cp -R kalao-hardware_configs/* ${WORKDIR}/hardware-workdir
 
 ##### Launch processes dm loop
 
@@ -106,131 +104,6 @@ else
 echo "found ${stepFile} -> skipping"
 fi
 
-# ======================================================================
-# Start DM combination
-# ======================================================================
-
-stepFile="step.aolaunch.DMCOMB"
-if [ ! -f "$stepFile" ]; then
-
-#DMch2disp
-sendFPScmd "setval DMch${DM_CHINDEX}disp${DM_DMINDEX}.DMindex ${DM_DMINDEX}"
-sendFPScmd "setval DMch${DM_CHINDEX}disp${DM_DMINDEX}.DMxsize 12"
-sendFPScmd "setval DMch${DM_CHINDEX}disp${DM_DMINDEX}.DMysize 12"
-#sendFPScmd "setval DMch${DM_CHINDEX}disp${DM_DMINDEX}.procinfo.loopcntMax -1"
-#sendFPScmd "setval DMch${DM_CHINDEX}disp${DM_DMINDEX}.procinfo.triggermode 3"
-#sendFPScmd "setval DMch${DM_CHINDEX}disp${DM_DMINDEX}.procinfo.triggersname dm${DM_DMINDEX}disp00"
-
-#sendFPScmd "setval DMch${DM_CHINDEX}disp${DM_DMINDEX}.procinfo.RTprio 49"
-#sendFPScmd "setval DMch${DM_CHINDEX}disp${DM_DMINDEX}.conf.taskset 0"
-
-sendFPScmd "confwupdate DMch${DM_CHINDEX}disp-${DM_DMINDEX}"
-sendFPScmd "runstart DMch${DM_CHINDEX}disp-${DM_DMINDEX}"
-
-
-sendFPScmd "setval DMch${TTM_CHINDEX}disp${TTM_DMINDEX}.DMindex ${TTM_DMINDEX}"
-#sendFPScmd "setval DMch${TTM_CHINDEX}disp${TTM_DMINDEX}.procinfo.loopcntMax -1"
-#sendFPScmd "setval DMch${TTM_CHINDEX}disp${TTM_DMINDEX}.procinfo.triggermode 3"
-#sendFPScmd "setval DMch${TTM_CHINDEX}disp${TTM_DMINDEX}.procinfo.triggersname dm${TTM_DMINDEX}disp00"
-
-#sendFPScmd "setval DMch${TTM_CHINDEX}disp${TTM_DMINDEX}.procinfo.RTprio 49"
-#sendFPScmd "setval DMch${TTM_CHINDEX}disp${TTM_DMINDEX}.conf.taskset 0"
-
-sendFPScmd "confwupdate DMch${TTM_CHINDEX}disp-${TTM_DMINDEX}"
-sendFPScmd "runstart DMch${TTM_CHINDEX}disp-${TTM_DMINDEX}"
-
-
-touch ${stepFile}
-exit
-else
-echo "found ${stepFile} -> skipping"
-fi
-
-# ======================================================================
-# Start Hardware
-# ======================================================================
-
-stepFile="step.aolaunch.HW"
-if [ ! -f "$stepFile" ]; then
-
-##### Configure hardware processes
-
-sendFPScmd "confstart bmc_display"
-sendFPScmd "confstart nuvu_acquire"
-sendFPScmd "confstart shwfs_process"
-
-sendFPScmd "setval bmc_display.DMin dm${DM_DMINDEX}disp"
-sendFPScmd "setval bmc_display.TTMin dm${TTM_DMINDEX}disp"
-sendFPScmd "setval bmc_display.procinfo.loopcntMax -1"
-sendFPScmd "setval bmc_display.procinfo.triggermode 0"
-sendFPScmd "setval bmc_display.procinfo.triggermode 3"
-sendFPScmd "setval bmc_display.procinfo.triggersname dm${DM_DMINDEX}disp"
-sendFPScmd "setval bmc_display.procinfo.triggertimeout 0.0001"
-
-
-sendFPScmd "setval bmc_display.ttm_tip_offset -0.05"
-sendFPScmd "setval bmc_display.ttm_tilt_offset 0.0"
-#sendFPScmd "setval bmc_display.ttm_tip_offset -0.850"
-#sendFPScmd "setval bmc_display.ttm_tilt_offset 0.500"
-#sendFPScmd "setval bmc_display.ttm_tip_offset -0.380"
-#sendFPScmd "setval bmc_display.ttm_tilt_offset 0.220"
-#sendFPScmd "setval bmc_display.ttm_tip_offset 0.300"
-#sendFPScmd "setval bmc_display.ttm_tilt_offset -0.090"
-#sendFPScmd "setval bmc_display.ttm_tip_offset 0.270"
-#sendFPScmd "setval bmc_display.ttm_tilt_offset -0.050"
-#sendFPScmd "setval bmc_display.ttm_tip_offset 0.600"
-#sendFPScmd "setval bmc_display.ttm_tilt_offset -0.250"
-
-sendFPScmd "setval bmc_display.procinfo.RTprio 8"
-sendFPScmd "setval bmc_display.conf.taskset 1"
-
-
-# Nuvu sdk driver setting
-##sendFPScmd "setval nuvu_acquire.procinfo.RTprio 10"
-#sendFPScmd "setval nuvu_acquire.procinfo.loopcntMax -1"
-#sendFPScmd "setval nuvu_acquire.procinfo.triggermode 0"
-
-##sendFPScmd "setval nuvu_acquire.readoutmode 1"
-#sendFPScmd "setval nuvu_acquire.readoutmode 4"
-#sendFPScmd "setval nuvu_acquire.emgain 1"
-##sendFPScmd "setval nuvu_acquire.emgain 20"
-#sendFPScmd "setval nuvu_acquire.exposuretime 0"
-#sendFPScmd "setval nuvu_acquire.autogain_params autogain_params.txt"
-
-#sendFPScmd "setval nuvu_acquire.conf.taskset 3-7"
-
-# Camstack setting
-sendFPScmd "setval nuvu_acquire.procinfo.RTprio 10"
-sendFPScmd "setval nuvu_acquire.procinfo.loopcntMax -1"
-sendFPScmd "setval nuvu_acquire.procinfo.triggermode 3"
-sendFPScmd "setval nuvu_acquire.procinfo.triggersname nuvu_raw"
-
-
-##sendFPScmd "setval nuvu_acquire.readoutmode 1"
-#sendFPScmd "setval nuvu_acquire.readoutmode 4"
-#sendFPScmd "setval nuvu_acquire.emgain 1"
-##sendFPScmd "setval nuvu_acquire.emgain 20"
-sendFPScmd "setval nuvu_acquire.exposuretime 0"
-sendFPScmd "setval nuvu_acquire.autogain_params autogain_params.txt"
-sendFPScmd "setval nuvu_acquire.bias bias/bias_%02ldC_%02ldrom_%01ldb_%04ldg.fits"
-sendFPScmd "setval nuvu_acquire.flat flat/flat_%02ldC_%02ldrom_%01ldb_%04ldg.fits"
-
-#sendFPScmd "setval nuvu_acquire.conf.taskset 3"
-
-
-
-
-sendFPScmd "setval shwfs_process.procinfo.loopcntMax -1"
-sendFPScmd "setval shwfs_process.procinfo.triggermode 3"
-sendFPScmd "setval shwfs_process.procinfo.triggersname nuvu_stream"
-
-sendFPScmd "setval shwfs_process.rawWFSin nuvu_stream"
-sendFPScmd "setval shwfs_process.spotcoords spots.txt"
-sendFPScmd "setval shwfs_process.outWFS ${DM_WFSSTREAM}"
-
-#sendFPScmd "setval nuvu_acquire.conf.taskset 3-7"
-#sendFPScmd "setval shwfs_process.conf.taskset 2"
-
 
 ##### Start hardware
 
@@ -240,11 +113,6 @@ sendFPScmd "runstart bmc_display"
 sendFPScmd "confwupdate nuvu_acquire"
 sendFPScmd "runstart nuvu_acquire"
 
-#sendFPScmd "confwupdate DMch${DM_CHINDEX}disp-${DM_DMINDEX}"
-#sendFPScmd "runstart DMch${DM_CHINDEX}disp-${DM_DMINDEX}"
-
-#sendFPScmd "confwupdate DMch${TTM_CHINDEX}disp-${TTM_DMINDEX}"
-#sendFPScmd "runstart DMch${TTM_CHINDEX}disp-${TTM_DMINDEX}"
 
 ##### Load dm flat
 
@@ -284,67 +152,6 @@ exit
 else
 echo "found ${stepFile} -> skipping"
 fi
-
-# =====================================================================
-# Temporary manual parameter setting
-# =====================================================================
-sendFPScmd "setval acqlin-zRM-${DM_LOOPNUMBER}.procinfo.RTprio 0"
-sendFPScmd "setval acqlin-zRM-${DM_LOOPNUMBER}.procinfo.loopcntMax 1"
-sendFPScmd "setval acqlin-zRM-${DM_LOOPNUMBER}.procinfo.triggermode 0"
-sendFPScmd "setval acqlin-zRM-${DM_LOOPNUMBER}.procinfo.triggersname "
-sendFPScmd "setval acqlin-zRM-${DM_LOOPNUMBER}.procinfo.semindexrequested 0"
-sendFPScmd "setval acqlin-zRM-${DM_LOOPNUMBER}.procinfo.triggerdelay 0"
-sendFPScmd "setval acqlin-zRM-${DM_LOOPNUMBER}.procinfo.triggertimeout 0"
-sendFPScmd "confwupdate acqlin-zRM-${DM_LOOPNUMBER}"
-
-sendFPScmd "setval compsCM-${DM_LOOPNUMBER}.procinfo.RTprio 0"
-sendFPScmd "setval compsCM-${DM_LOOPNUMBER}.procinfo.loopcntMax 1"
-sendFPScmd "setval compsCM-${DM_LOOPNUMBER}.procinfo.triggermode 0"
-sendFPScmd "setval compsCM-${DM_LOOPNUMBER}.procinfo.triggersname " # Find out how to set empty
-sendFPScmd "setval compsCM-${DM_LOOPNUMBER}.procinfo.semindexrequested 0"
-sendFPScmd "setval compsCM-${DM_LOOPNUMBER}.procinfo.triggerdelay 0"
-sendFPScmd "setval compsCM-${DM_LOOPNUMBER}.procinfo.triggertimeout 0"
-sendFPScmd "setval compsCM-${DM_LOOPNUMBER}.SVDlim 0.01"
-sendFPScmd "confwupdate compsCM-${DM_LOOPNUMBER}"
-
-
-#sendFPScmd "setval acquWFS-${DM_LOOPNUMBER}.procinfo.triggermode 3"
-#sendFPScmd "setval bmc_display.procinfo.triggersname dm${DM_DMINDEX}disp"
-
-
-sendFPScmd "setval acquWFS-${DM_LOOPNUMBER}.procinfo.loopcntMax -1"
-sendFPScmd "setval acquWFS-${DM_LOOPNUMBER}.procinfo.triggermode 3"
-#sendFPScmd "setval acquWFS-${DM_LOOPNUMBER}.procinfo.triggermode 3"
-#sendFPScmd "setval bmc_display.procinfo.triggersname dm${DM_DMINDEX}disp"
-
-#sendFPScmd "setval loopRUN-${DM_LOOPNUMBER}.procinfo.RTprio 0"
-sendFPScmd "setval loopRUN-${DM_LOOPNUMBER}.procinfo.loopcntMax -1"
-sendFPScmd "setval loopRUN-${DM_LOOPNUMBER}.procinfo.triggermode 3"
-sendFPScmd "setval loopRUN-${DM_LOOPNUMBER}.procinfo.triggersname aol1_imWFS1"
-sendFPScmd "setval loopRUN-${DM_LOOPNUMBER}.procinfo.semindexrequested 0"
-sendFPScmd "setval loopRUN-${DM_LOOPNUMBER}.procinfo.triggerdelay 0"
-sendFPScmd "setval loopRUN-${DM_LOOPNUMBER}.procinfo.triggertimeout 0"
-sendFPScmd "setval loopRUN-${DM_LOOPNUMBER}.loopgain 0.11"
-sendFPScmd "setval loopRUN-${DM_LOOPNUMBER}.loopmult 0.96"
-sendFPScmd "setval loopRUN-${DM_LOOPNUMBER}.maxlim 0.5"
-#sendFPScmd "confwupdate loopRUN-${DM_LOOPNUMBER}"
-
-# ======================================================================
-# Acquire WFS image from camera
-# ======================================================================
-
-stepFile="step.aolaunch.ACQWFS"
-if [ ! -f "$stepFile" ]; then
-
-sendFPScmd "confwupdate acquWFS-${DM_LOOPNUMBER}"
-sendFPScmd "runstart acquWFS-${DM_LOOPNUMBER}"
-
-touch ${stepFile}
-exit
-else
-echo "found ${stepFile} -> skipping"
-fi
-
 
 # ======================================================================
 # Close AO loop
