@@ -25,3 +25,16 @@ export CACAO_LOOPDATALOGDIR="$(pwd)/datalogdir"
 #       FPS processes to be set up
 # ========================================
 
+# BMC DM hardware control
+#
+export CACAO_FPSPROC_BMCDISP="ON"
+
+
+# NUVU acquisition: read raw nuvu stream and reformats into clean stream
+#
+export CACAO_FPSPROC_NUVUACQ="ON"
+
+# SHWFS processing: reads nuvu stream and process Shack-Hartman slopes
+#
+export CACAO_FPSPROC_SHWFSPROC="ON"
+
