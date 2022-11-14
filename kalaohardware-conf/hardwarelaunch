@@ -31,7 +31,7 @@ DM_WFSSTREAM=$CACAO_WFSSTREAM
 
 ##### Load infos for ttm
 
-TTM_CONFNAME="ttmloop"
+TTM_CONFNAME="kalaohardware"
 
 TTM_WORKDIR=$(<${TTM_CONFNAME}-conf/WORKDIR)
 TTM_LOOPNAME=$(<${TTM_CONFNAME}-conf/LOOPNAME)
@@ -107,10 +107,10 @@ fi
 
 ##### Start hardware
 
-sendFPScmd "confwupdate bmc_display"
+#sendFPScmd "confwupdate bmc_display"
 sendFPScmd "runstart bmc_display"
 
-sendFPScmd "confwupdate nuvu_acquire"
+#sendFPScmd "confwupdate nuvu_acquire"
 sendFPScmd "runstart nuvu_acquire"
 
 
@@ -144,7 +144,7 @@ if [ ! -f "$stepFile" ]; then
 
 waitFile "${MILK_SHM_DIR}/nuvu_stream.im.shm"
 
-sendFPScmd "confwupdate shwfs_process"
+#sendFPScmd "confwupdate shwfs_process"
 sendFPScmd "runstart shwfs_process"
 
 touch ${stepFile}
@@ -172,10 +172,5 @@ EOF
 
 popd
 
-sendFPScmd "confwupdate loopRUN-${DM_LOOPNUMBER}"
+#sendFPScmd "confwupdate loopRUN-${DM_LOOPNUMBER}"
 
-touch ${stepFile}
-exit
-else
-echo "found ${stepFile} -> skipping"
-fi
