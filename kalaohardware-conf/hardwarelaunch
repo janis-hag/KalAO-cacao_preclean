@@ -106,7 +106,7 @@ cacao-task-manager -X 4 "${DM_CONFNAME}"
 
 ##### Launch processes ttm loop
 
-cacao-task-manager -X 4 "${TTM_CONFNAME}"
+#cacao-task-manager -X 4 "${TTM_CONFNAME}"
 
 touch ${stepFile}
 exit
@@ -118,8 +118,15 @@ exit
 
 ##### Start hardware
 
+# TODO use DMINDEX and LOOPNUMBER to define name
+sendFPScmd "runstart DMch2disp-01"
+
+sleep 10
+
 #sendFPScmd "confwupdate bmc_display"
 sendFPScmd "runstart bmc_display"
+
+sleep 10
 
 #sendFPScmd "confwupdate nuvu_acquire"
 sendFPScmd "runstart nuvu_acquire"
@@ -142,6 +149,7 @@ popd
 
 touch ${stepFile}
 exit
+
 else
 echo "found ${stepFile} -> skipping"
 fi
