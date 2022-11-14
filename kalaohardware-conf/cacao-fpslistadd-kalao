@@ -1,0 +1,54 @@
+if [ "${CACAO_FPSPROC_BMCDISP}" = "ON" ]; then
+    echolog "ON  CACAO_FPSPROC_BMCDISP"
+    # ==============================================================================
+    # ==========  DM combination ===================================================
+    # ==============================================================================
+
+    # FPS name
+    fpsname="bmc_display"
+    fpsarg0="${CACAO_DMINDEX}"
+
+    # FPS full name
+    fpsfname="${fpsname}-${fpsarg0}"
+
+    if grep -q "${fpsname}" fpslist.txt
+    then
+        echolog "Process ${fpsname} already registered - skipping"
+    else
+        echolog "Adding process ${fpsname}"
+	# name_of_fps command_to_execute
+        echo "${fpsname}      KalAO_BMC.display"  >> fpslist.txt
+
+        addfpscmdheader
+        # infinite loop
+        addfpscmd "setval ${fpsfname}.procinfo.loopcntMax -1"
+        addfpscmd "setval ${fpsfname}.procinfo.triggermode 4" # delay
+        addfpscmd "setval ${fpsfname}.procinfo.triggerdelay 0.00001" # 10us
+        addfpscmd "setval ${fpsfname}.procinfo.triggertimeout 0.00001" # 10us
+        addfpscmd "setval ${fpsfname}.DMindex ${CACAO_DMINDEX}"
+        addfpscmd "setval ${fpsfname}.DMxsize ${CACAO_DMxsize}"
+        addfpscmd "setval ${fpsfname}.DMysize ${CACAO_DMysize}"
+        addfpscmd "setval ${fpsfname}.DMcombout dm${CACAO_DMINDEX}disp"
+        addfpscmd "setval ${fpsfname}.astrogrid aol${CACAO_LOOPNUMBER}_DMastrogrid"
+        addfpscmd "setval ${fpsfname}.zpoffset.DMcomboutzpo aol${CACAO_LOOPNUMBER}_dmzpo"
+
+	addfpscmd "setval ${fpsname}.DMin dmDMINDEXdisp"
+	addfpscmd "setval bmc_display.TTMin dmDMINDEXdisp"
+	addfpscmd "setval bmc_display.procinfo.loopcntMax -1"
+	addfpscmd "setval bmc_display.procinfo.triggermode 0"
+	addfpscmd "setval bmc_display.procinfo.triggermode 3"
+	addfpscmd "setval bmc_display.procinfo.triggersname dmDMINDEXdisp"
+	addfpscmd "setval bmc_display.procinfo.triggertimeout 0.0001"
+
+	addfpscmd "setval bmc_display.ttm_tip_offset -0.05"
+	addfpscmd "setval bmc_display.ttm_tilt_offset 0.0"
+
+	addfpscmd "setval bmc_display.procinfo.RTprio 8"
+	addfpscmd "setval bmc_display.conf.taskset 1"
+
+    fi
+else
+    echolog "CACAO_FPSPROC_BMCDISP = OFF"
+fi
+
+

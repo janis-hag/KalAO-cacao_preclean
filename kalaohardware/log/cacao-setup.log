@@ -1,0 +1,728 @@
+20221113T211420.411168816 1668374060.411168816 START
+20221113T211420.411684182 1668374060.411684182 ON  CACAO_FPSPROC_DMCH2DISP
+20221113T211420.412472349 1668374060.412472349 Adding process DMch2disp
+20221113T211420.413231523 1668374060.413231523 FPS CMD TO fps.conf/fpssetup.confstart.DMch2disp-01.conf : setval DMch2disp-01.procinfo.loopcntMax -1
+20221113T211420.413642757 1668374060.413642757 FPS CMD TO fps.conf/fpssetup.confstart.DMch2disp-01.conf : setval DMch2disp-01.procinfo.triggermode 4
+20221113T211420.414096521 1668374060.414096521 FPS CMD TO fps.conf/fpssetup.confstart.DMch2disp-01.conf : setval DMch2disp-01.procinfo.triggerdelay 0.00001
+20221113T211420.414515202 1668374060.414515202 FPS CMD TO fps.conf/fpssetup.confstart.DMch2disp-01.conf : setval DMch2disp-01.procinfo.triggertimeout 0.00001
+20221113T211420.414920573 1668374060.414920573 FPS CMD TO fps.conf/fpssetup.confstart.DMch2disp-01.conf : setval DMch2disp-01.DMindex 01
+20221113T211420.415335006 1668374060.415335006 FPS CMD TO fps.conf/fpssetup.confstart.DMch2disp-01.conf : setval DMch2disp-01.DMxsize 12
+20221113T211420.415748477 1668374060.415748477 FPS CMD TO fps.conf/fpssetup.confstart.DMch2disp-01.conf : setval DMch2disp-01.DMysize 12
+20221113T211420.416143764 1668374060.416143764 FPS CMD TO fps.conf/fpssetup.confstart.DMch2disp-01.conf : setval DMch2disp-01.DMcombout dm01disp
+20221113T211420.416546824 1668374060.416546824 FPS CMD TO fps.conf/fpssetup.confstart.DMch2disp-01.conf : setval DMch2disp-01.astrogrid aol1_DMastrogrid
+20221113T211420.416955022 1668374060.416955022 FPS CMD TO fps.conf/fpssetup.confstart.DMch2disp-01.conf : setval DMch2disp-01.zpoffset.DMcomboutzpo aol1_dmzpo
+20221113T211420.417427358 1668374060.417427358 ON  CACAO_FPSPROC_STREAMDELAY
+20221113T211420.418208094 1668374060.418208094 Adding process streamDelay
+20221113T211420.418963562 1668374060.418963562 FPS CMD TO fps.conf/fpssetup.confstart.streamDelay-01.conf : setval streamDelay-01.procinfo.loopcntMax -1
+20221113T211420.419379063 1668374060.419379063 FPS CMD TO fps.conf/fpssetup.confstart.streamDelay-01.conf : setval streamDelay-01.procinfo.triggermode 4
+20221113T211420.419779646 1668374060.419779646 FPS CMD TO fps.conf/fpssetup.confstart.streamDelay-01.conf : setval streamDelay-01.procinfo.triggerdelay 0.0001
+20221113T211420.420178007 1668374060.420178007 FPS CMD TO fps.conf/fpssetup.confstart.streamDelay-01.conf : setval streamDelay-01.in_name aol1_dmdisp
+20221113T211420.420582427 1668374060.420582427 FPS CMD TO fps.conf/fpssetup.confstart.streamDelay-01.conf : setval streamDelay-01.out_name aol1_dmdispD
+20221113T211420.420991349 1668374060.420991349 FPS CMD TO fps.conf/fpssetup.confstart.streamDelay-01.conf : setval streamDelay-01.delaysec 0.01
+20221113T211420.421493773 1668374060.421493773 ON  CACAO_FPSPROC_SIMMVMGPU
+20221113T211420.422243173 1668374060.422243173 Adding process simmvmgpu
+20221113T211420.422654029 1668374060.422654029 RUNNING CMD : mkdir -p dmloop-workdir/simLHS
+20221113T211420.423418868 1668374060.423418868 RUNNING CMD : cp simLHS/kalaohardware.respM.fits ./dmloop-workdir/simLHS/simLHS.respM.fits
+20221113T211420.424259821 1668374060.424259821 RUNNING CMD : cp simLHS/kalaohardware.wfsref.fits ./dmloop-workdir/simLHS/simLHS.wfsref.fits
+20221113T211420.425087273 1668374060.425087273 RUNNING CMD : cp ./dmloop-workdir/simLHS/simLHS.respM.fits ./dmloop-workdir/conf/shmim.aolsimLHSrespM.fits
+20221113T211420.425939917 1668374060.425939917 RUNNING CMD : cp ./dmloop-workdir/simLHS/simLHS.wfsref.fits ./dmloop-workdir/conf/shmim.aolsimLHSwfsref.fits
+20221113T211420.427102266 1668374060.427102266 FPS CMD TO fps.conf/fpssetup.confstart.simmvmgpu-1.conf : setval simmvmgpu-1.insname aol1_dmdispD
+20221113T211420.427526872 1668374060.427526872 FPS CMD TO fps.conf/fpssetup.confstart.simmvmgpu-1.conf : setval simmvmgpu-1.immodes aolsimLHSrespM
+20221113T211420.427945982 1668374060.427945982 FPS CMD TO fps.conf/fpssetup.confstart.simmvmgpu-1.conf : setval simmvmgpu-1.outcoeff aol1_linsimWFS
+20221113T211420.428354350 1668374060.428354350 FPS CMD TO fps.conf/fpssetup.confstart.simmvmgpu-1.conf : setval simmvmgpu-1.outinit ON
+20221113T211420.428769763 1668374060.428769763 FPS CMD TO fps.conf/fpssetup.confstart.simmvmgpu-1.conf : setval simmvmgpu-1.procinfo.loopcntMax -1
+20221113T211420.429179742 1668374060.429179742 FPS CMD TO fps.conf/fpssetup.confstart.simmvmgpu-1.conf : setval simmvmgpu-1.procinfo.triggermode 4
+20221113T211420.429579709 1668374060.429579709 FPS CMD TO fps.conf/fpssetup.confstart.simmvmgpu-1.conf : setval simmvmgpu-1.procinfo.triggerdelay 0.001
+20221113T211420.429985310 1668374060.429985310 FPS CMD TO fps.conf/fpssetup.confstart.simmvmgpu-1.conf : setval simmvmgpu-1.procinfo.triggertimeout 0.0
+20221113T211420.430445952 1668374060.430445952 FPS CMD TO fps.conf/fpssetup.confstart.simmvmgpu-1.conf : setval simmvmgpu-1.option.axmode 1
+20221113T211420.430866128 1668374060.430866128 FPS CMD TO fps.conf/fpssetup.confstart.simmvmgpu-1.conf : setval simmvmgpu-1.option.PROCESS OFF
+20221113T211420.431262655 1668374060.431262655 FPS CMD TO fps.conf/fpssetup.confstart.simmvmgpu-1.conf : setval simmvmgpu-1.option.TRACEMODE OFF
+20221113T211420.431678424 1668374060.431678424 FPS CMD TO fps.conf/fpssetup.confstart.simmvmgpu-1.conf : setval simmvmgpu-1.option.MODENORM OFF
+20221113T211420.432076908 1668374060.432076908 FPS CMD TO fps.conf/fpssetup.confstart.simmvmgpu-1.conf : setval simmvmgpu-1.option.sname_intot NULL
+20221113T211420.432480679 1668374060.432480679 FPS CMD TO fps.conf/fpssetup.confstart.simmvmgpu-1.conf : setval simmvmgpu-1.option.sname_refin NULL
+20221113T211420.432889007 1668374060.432889007 FPS CMD TO fps.conf/fpssetup.confstart.simmvmgpu-1.conf : setval simmvmgpu-1.option.sname_refout aolsimLHSwfsref
+20221113T211420.433351002 1668374060.433351002 ON  CACAO_FPSPROC_MLAT
+20221113T211420.434088537 1668374060.434088537 Adding process mlat
+20221113T211420.434818901 1668374060.434818901 FPS CMD TO fps.conf/fpssetup.confstart.mlat-1.conf : setval mlat-1.NBiter 20
+20221113T211420.435220052 1668374060.435220052 FPS CMD TO fps.conf/fpssetup.confstart.mlat-1.conf : setval mlat-1.dmstream aol1_dmRM
+20221113T211420.435635263 1668374060.435635263 FPS CMD TO fps.conf/fpssetup.confstart.mlat-1.conf : setval mlat-1.wfsstream aol1_wfsim
+20221113T211420.436132719 1668374060.436132719 ON  CACAO_FPSPROC_ACQUWFS
+20221113T211420.436894781 1668374060.436894781 Adding process acquWFS
+20221113T211420.437624035 1668374060.437624035 FPS CMD TO fps.conf/fpssetup.confstart.acquWFS-1.conf : setval acquWFS-1.AOloopindex 1
+20221113T211420.438032823 1668374060.438032823 FPS CMD TO fps.conf/fpssetup.confstart.acquWFS-1.conf : setval acquWFS-1.procinfo.loopcntMax -1
+20221113T211420.438449841 1668374060.438449841 FPS CMD TO fps.conf/fpssetup.confstart.acquWFS-1.conf : setval acquWFS-1.procinfo.triggermode 3
+20221113T211420.438852875 1668374060.438852875 FPS CMD TO fps.conf/fpssetup.confstart.acquWFS-1.conf : setval acquWFS-1.procinfo.triggersname aol1_wfsim 
+20221113T211420.439289973 1668374060.439289973 FPS CMD TO fps.conf/fpssetup.confstart.acquWFS-1.conf : setval acquWFS-1.comp.WFSnormalize ON
+20221113T211420.439691221 1668374060.439691221 FPS CMD TO fps.conf/fpssetup.confstart.acquWFS-1.conf : setval acquWFS-1.comp.darksub ON
+20221113T211420.440082942 1668374060.440082942 FPS CMD TO fps.conf/fpssetup.confstart.acquWFS-1.conf : setval acquWFS-1.comp.imtotal ON
+20221113T211420.440485707 1668374060.440485707 FPS CMD TO fps.conf/fpssetup.confstart.acquWFS-1.conf : setval acquWFS-1.comp.normwfsim ON
+20221113T211420.440884554 1668374060.440884554 FPS CMD TO fps.conf/fpssetup.confstart.acquWFS-1.conf : setval acquWFS-1.wfszpo aol1_wfszpo
+20221113T211420.441365114 1668374060.441365114 ON  CACAO_FPSPROC_ACQLINZRM
+20221113T211420.446043034 1668374060.446043034 Adding process acqlin_zRM
+20221113T211420.446800904 1668374060.446800904 FPS CMD TO fps.conf/fpssetup.confstart.acqlin_zRM-1.conf : setval acqlin_zRM-1.AOloopindex 1
+20221113T211420.447201465 1668374060.447201465 FPS CMD TO fps.conf/fpssetup.confstart.acqlin_zRM-1.conf : setval acqlin_zRM-1.FPS_mlat mlat-1
+20221113T211420.447622118 1668374060.447622118 FPS CMD TO fps.conf/fpssetup.confstart.acqlin_zRM-1.conf : setval acqlin_zRM-1.FPS_DMcomb DMch2disp-01
+20221113T211420.448029935 1668374060.448029935 FPS CMD TO fps.conf/fpssetup.confstart.acqlin_zRM-1.conf : setval acqlin_zRM-1.normalize ON
+20221113T211420.448445491 1668374060.448445491 FPS CMD TO fps.conf/fpssetup.confstart.acqlin_zRM-1.conf : setval acqlin_zRM-1.Hpoke ON
+20221113T211420.448847768 1668374060.448847768 FPS CMD TO fps.conf/fpssetup.confstart.acqlin_zRM-1.conf : setval acqlin_zRM-1.autoTiming ON
+20221113T211420.449245587 1668374060.449245587 FPS CMD TO fps.conf/fpssetup.confstart.acqlin_zRM-1.conf : setval acqlin_zRM-1.compDMmask ON
+20221113T211420.449645518 1668374060.449645518 FPS CMD TO fps.conf/fpssetup.confstart.acqlin_zRM-1.conf : setval acqlin_zRM-1.compMpoke ON
+20221113T211420.450045943 1668374060.450045943 FPS CMD TO fps.conf/fpssetup.confstart.acqlin_zRM-1.conf : setval acqlin_zRM-1.timing.NBave 1
+20221113T211420.450453770 1668374060.450453770 FPS CMD TO fps.conf/fpssetup.confstart.acqlin_zRM-1.conf : setval acqlin_zRM-1.timing.NBcycle 2
+20221113T211420.450849989 1668374060.450849989 FPS CMD TO fps.conf/fpssetup.confstart.acqlin_zRM-1.conf : setval acqlin_zRM-1.timing.NBinnerCycle 1
+20221113T211420.451251537 1668374060.451251537 FPS CMD TO fps.conf/fpssetup.confstart.acqlin_zRM-1.conf : setval acqlin_zRM-1.timing.NBexcl 0
+20221113T211420.451651481 1668374060.451651481 FPS CMD TO fps.conf/fpssetup.confstart.acqlin_zRM-1.conf : setval acqlin_zRM-1.MaskMode ON
+20221113T211420.452046621 1668374060.452046621 FPS CMD TO fps.conf/fpssetup.confstart.acqlin_zRM-1.conf : setval acqlin_zRM-1.exec.RMdecode cacaobin/cacao-RMdecode
+20221113T211420.452453665 1668374060.452453665 FPS CMD TO fps.conf/fpssetup.confstart.acqlin_zRM-1.conf : setval acqlin_zRM-1.exec.mkDMWFSmasks cacaobin/cacao-mkDMWFSmasks
+20221113T211420.452857400 1668374060.452857400 FPS CMD TO fps.conf/fpssetup.confstart.acqlin_zRM-1.conf : setval acqlin_zRM-1.exec.mkDMslaveact cacaobin/cacao-mkDMslaveActprox
+20221113T211420.453267591 1668374060.453267591 FPS CMD TO fps.conf/fpssetup.confstart.acqlin_zRM-1.conf : setval acqlin_zRM-1.exec.mkLODMmodes cacaobin/cacao-mkLODMmodes
+20221113T211420.453768665 1668374060.453768665 OFF CACAO_FPSPROC_ACQWFSLINCALZ
+20221113T211420.454237042 1668374060.454237042 ON  CACAO_FPSPROC_ACQLINLORM
+20221113T211420.455041783 1668374060.455041783 Adding process acqlin_loRM
+20221113T211420.455795998 1668374060.455795998 FPS CMD TO fps.conf/fpssetup.confstart.acqlin_loRM-1.conf : setval acqlin_loRM-1.AOloopindex 1
+20221113T211420.456210661 1668374060.456210661 FPS CMD TO fps.conf/fpssetup.confstart.acqlin_loRM-1.conf : setval acqlin_loRM-1.FPS_mlat mlat-1
+20221113T211420.456626693 1668374060.456626693 FPS CMD TO fps.conf/fpssetup.confstart.acqlin_loRM-1.conf : setval acqlin_loRM-1.FPS_DMcomb DMch2disp-01
+20221113T211420.457066207 1668374060.457066207 FPS CMD TO fps.conf/fpssetup.confstart.acqlin_loRM-1.conf : setval acqlin_loRM-1.normalize ON
+20221113T211420.457464749 1668374060.457464749 FPS CMD TO fps.conf/fpssetup.confstart.acqlin_loRM-1.conf : setval acqlin_loRM-1.Hpoke OFF
+20221113T211420.457868049 1668374060.457868049 FPS CMD TO fps.conf/fpssetup.confstart.acqlin_loRM-1.conf : setval acqlin_loRM-1.autoTiming ON
+20221113T211420.458272226 1668374060.458272226 FPS CMD TO fps.conf/fpssetup.confstart.acqlin_loRM-1.conf : setval acqlin_loRM-1.compDMmask OFF
+20221113T211420.458669186 1668374060.458669186 FPS CMD TO fps.conf/fpssetup.confstart.acqlin_loRM-1.conf : setval acqlin_loRM-1.compMpoke OFF
+20221113T211420.459075798 1668374060.459075798 FPS CMD TO fps.conf/fpssetup.confstart.acqlin_loRM-1.conf : setval acqlin_loRM-1.timing.NBave 1
+20221113T211420.459481880 1668374060.459481880 FPS CMD TO fps.conf/fpssetup.confstart.acqlin_loRM-1.conf : setval acqlin_loRM-1.timing.NBcycle 4
+20221113T211420.459882788 1668374060.459882788 FPS CMD TO fps.conf/fpssetup.confstart.acqlin_loRM-1.conf : setval acqlin_loRM-1.timing.NBinnerCycle 1
+20221113T211420.460279067 1668374060.460279067 FPS CMD TO fps.conf/fpssetup.confstart.acqlin_loRM-1.conf : setval acqlin_loRM-1.timing.NBexcl 0
+20221113T211420.460696049 1668374060.460696049 FPS CMD TO fps.conf/fpssetup.confstart.acqlin_loRM-1.conf : setval acqlin_loRM-1.fn_pokeC respM_LOmodes.fits
+20221113T211420.461097961 1668374060.461097961 FPS CMD TO fps.conf/fpssetup.confstart.acqlin_loRM-1.conf : setval acqlin_loRM-1.MaskMode OFF
+20221113T211420.461496114 1668374060.461496114 FPS CMD TO fps.conf/fpssetup.confstart.acqlin_loRM-1.conf : setval acqlin_loRM-1.exec.RMdecode cacaobin/cacao-NULL
+20221113T211420.461901419 1668374060.461901419 FPS CMD TO fps.conf/fpssetup.confstart.acqlin_loRM-1.conf : setval acqlin_loRM-1.exec.mkDMWFSmasks cacaobin/cacao-NULL
+20221113T211420.462300830 1668374060.462300830 FPS CMD TO fps.conf/fpssetup.confstart.acqlin_loRM-1.conf : setval acqlin_loRM-1.exec.mkDMslaveact cacaobin/cacao-NULL
+20221113T211420.462746497 1668374060.462746497 FPS CMD TO fps.conf/fpssetup.confstart.acqlin_loRM-1.conf : setval acqlin_loRM-1.exec.mkLODMmodes cacaobin/cacao-NULL
+20221113T211420.463213940 1668374060.463213940 ON  CACAO_FPSPROC_COMPFCM
+20221113T211420.464019208 1668374060.464019208 Adding process compfCM
+20221113T211420.464795274 1668374060.464795274 FPS CMD TO fps.conf/fpssetup.confstart.compfCM-1.conf : setval compfCM-1.AOloopindex 1
+20221113T211420.465195868 1668374060.465195868 FPS CMD TO fps.conf/fpssetup.confstart.compfCM-1.conf : setval compfCM-1.FPS_zRMacqu acqlin_zRM-1
+20221113T211420.465600879 1668374060.465600879 FPS CMD TO fps.conf/fpssetup.confstart.compfCM-1.conf : setval compfCM-1.FPS_loRMacqu acqlin_loRM-1
+20221113T211420.466052331 1668374060.466052331 FPS CMD TO fps.conf/fpssetup.confstart.compfCM-1.conf : setval compfCM-1.FPS_DMcomb DMch2disp-01
+20221113T211420.466504442 1668374060.466504442 OFF CACAO_FPSPROC_COMPFCM
+20221113T211420.466925757 1668374060.466925757 ON  CACAO_FPSPROC_COMPSCM
+20221113T211420.467677597 1668374060.467677597 Adding process compsCM
+20221113T211420.468462147 1668374060.468462147 FPS CMD TO fps.conf/fpssetup.confstart.compsCM-1.conf : setval compsCM-1.AOloopindex 1
+20221113T211420.468870702 1668374060.468870702 FPS CMD TO fps.conf/fpssetup.confstart.compsCM-1.conf : setval compsCM-1.fname_respM fps.acqlin_zRM-1.datadir/zrespM_mn.fits
+20221113T211420.469391595 1668374060.469391595 ON  CACAO_FPSPROC_MODESEXTRACTWFSGPU
+20221113T211420.470172038 1668374060.470172038 Adding process modesextractWFSGPU
+20221113T211420.470923238 1668374060.470923238 FPS CMD TO fps.conf/fpssetup.confstart.modesextractWFSGPU-1.conf : setval modesextractWFSGPU-1.AOloopindex 1
+20221113T211420.471334822 1668374060.471334822 FPS CMD TO fps.conf/fpssetup.confstart.modesextractWFSGPU-1.conf : setval modesextractWFSGPU-1.sname_in aol1_imWFS0
+20221113T211420.471737233 1668374060.471737233 FPS CMD TO fps.conf/fpssetup.confstart.modesextractWFSGPU-1.conf : setval modesextractWFSGPU-1.option.sname_intot aol1_imWFS0tot
+20221113T211420.472149700 1668374060.472149700 FPS CMD TO fps.conf/fpssetup.confstart.modesextractWFSGPU-1.conf : setval modesextractWFSGPU-1.sname_modes aol1_modesWFS
+20221113T211420.472565890 1668374060.472565890 FPS CMD TO fps.conf/fpssetup.confstart.modesextractWFSGPU-1.conf : setval modesextractWFSGPU-1.option.sname_refin aol1_wfsref
+20221113T211420.472965757 1668374060.472965757 FPS CMD TO fps.conf/fpssetup.confstart.modesextractWFSGPU-1.conf : setval modesextractWFSGPU-1.sname_outmodesval aol1_modeval
+20221113T211420.473377753 1668374060.473377753 FPS CMD TO fps.conf/fpssetup.confstart.modesextractWFSGPU-1.conf : setval modesextractWFSGPU-1.outinit ON
+20221113T211420.473790499 1668374060.473790499 FPS CMD TO fps.conf/fpssetup.confstart.modesextractWFSGPU-1.conf : setval modesextractWFSGPU-1.option.GPUindex 0
+20221113T211420.474196121 1668374060.474196121 FPS CMD TO fps.conf/fpssetup.confstart.modesextractWFSGPU-1.conf : setval modesextractWFSGPU-1.option.PROCESS ON
+20221113T211420.474613781 1668374060.474613781 FPS CMD TO fps.conf/fpssetup.confstart.modesextractWFSGPU-1.conf : setval modesextractWFSGPU-1.option.TRACEMODE ON
+20221113T211420.475019913 1668374060.475019913 FPS CMD TO fps.conf/fpssetup.confstart.modesextractWFSGPU-1.conf : setval modesextractWFSGPU-1.option.MODENORM ON
+20221113T211420.475425588 1668374060.475425588 FPS CMD TO fps.conf/fpssetup.confstart.modesextractWFSGPU-1.conf : setval modesextractWFSGPU-1.option.insem 2
+20221113T211420.475823483 1668374060.475823483 FPS CMD TO fps.conf/fpssetup.confstart.modesextractWFSGPU-1.conf : setval modesextractWFSGPU-1.option.axmode 0
+20221113T211420.476222001 1668374060.476222001 FPS CMD TO fps.conf/fpssetup.confstart.modesextractWFSGPU-1.conf : setval modesextractWFSGPU-1.option.twait 0
+20221113T211420.476673400 1668374060.476673400 ON  CACAO_FPSPROC_AOLOOP_RUN
+20221113T211420.477441783 1668374060.477441783 Adding process loopRUN
+20221113T211420.478192685 1668374060.478192685 FPS CMD TO fps.conf/fpssetup.confstart.loopRUN-1.conf : setval loopRUN-1.AOloopindex 1
+20221113T211420.478617830 1668374060.478617830 FPS CMD TO fps.conf/fpssetup.confstart.loopRUN-1.conf : setval loopRUN-1.sn_wfs aol1_imWFS1
+20221113T211420.479041978 1668374060.479041978 FPS CMD TO fps.conf/fpssetup.confstart.loopRUN-1.conf : setval loopRUN-1.loopgain 0.02
+20221113T211420.479460001 1668374060.479460001 FPS CMD TO fps.conf/fpssetup.confstart.loopRUN-1.conf : setval loopRUN-1.loopmult 0.99
+20221113T211420.479861099 1668374060.479861099 FPS CMD TO fps.conf/fpssetup.confstart.loopRUN-1.conf : setval loopRUN-1.loopON OFF
+20221113T211420.480299738 1668374060.480299738 FPS CMD TO fps.conf/fpssetup.confstart.loopRUN-1.conf : setval loopRUN-1.loopZERO OFF
+20221113T211420.480696328 1668374060.480696328 FPS CMD TO fps.conf/fpssetup.confstart.loopRUN-1.conf : setval loopRUN-1.wfsrefON OFF
+20221113T211420.481094479 1668374060.481094479 FPS CMD TO fps.conf/fpssetup.confstart.loopRUN-1.conf : setval loopRUN-1.sn_cmat aol1_CMat
+20221113T211420.481499928 1668374060.481499928 FPS CMD TO fps.conf/fpssetup.confstart.loopRUN-1.conf : setval loopRUN-1.sn_DMout aol1_dmC
+20221113T211420.481967147 1668374060.481967147 ON  CACAO_FPSPROC_MVM_WFS2CMODEVAL
+20221113T211420.482741791 1668374060.482741791 Adding process wfs2cmodeval
+20221113T211420.483487961 1668374060.483487961 FPS CMD TO fps.conf/fpssetup.confstart.wfs2cmodeval-1.conf : setval wfs2cmodeval-1.procinfo.loopcntMax -1
+20221113T211420.483892591 1668374060.483892591 FPS CMD TO fps.conf/fpssetup.confstart.wfs2cmodeval-1.conf : setval wfs2cmodeval-1.procinfo.triggermode 3
+20221113T211420.484303774 1668374060.484303774 FPS CMD TO fps.conf/fpssetup.confstart.wfs2cmodeval-1.conf : setval wfs2cmodeval-1.procinfo.triggersname aol1_imWFS1
+20221113T211420.484712708 1668374060.484712708 FPS CMD TO fps.conf/fpssetup.confstart.wfs2cmodeval-1.conf : setval wfs2cmodeval-1.insname aol1_imWFS1
+20221113T211420.485115046 1668374060.485115046 FPS CMD TO fps.conf/fpssetup.confstart.wfs2cmodeval-1.conf : setval wfs2cmodeval-1.immodes aol1_modesWFS
+20221113T211420.485525107 1668374060.485525107 FPS CMD TO fps.conf/fpssetup.confstart.wfs2cmodeval-1.conf : setval wfs2cmodeval-1.outcoeff aol1_modevalWFS
+20221113T211420.485917742 1668374060.485917742 FPS CMD TO fps.conf/fpssetup.confstart.wfs2cmodeval-1.conf : setval wfs2cmodeval-1.option.sname_intot aol1_imWFS0tot
+20221113T211420.486331991 1668374060.486331991 FPS CMD TO fps.conf/fpssetup.confstart.wfs2cmodeval-1.conf : setval wfs2cmodeval-1.option.sname_refin aol1_wfsref
+20221113T211420.486723440 1668374060.486723440 FPS CMD TO fps.conf/fpssetup.confstart.wfs2cmodeval-1.conf : setval wfs2cmodeval-1.outinit ON
+20221113T211420.487123660 1668374060.487123660 FPS CMD TO fps.conf/fpssetup.confstart.wfs2cmodeval-1.conf : setval wfs2cmodeval-1.GPUindex 0
+20221113T211420.487522761 1668374060.487522761 FPS CMD TO fps.conf/fpssetup.confstart.wfs2cmodeval-1.conf : setval wfs2cmodeval-1.option.PROCESS ON
+20221113T211420.487916511 1668374060.487916511 FPS CMD TO fps.conf/fpssetup.confstart.wfs2cmodeval-1.conf : setval wfs2cmodeval-1.option.TRACEMODE OFF
+20221113T211420.488328294 1668374060.488328294 FPS CMD TO fps.conf/fpssetup.confstart.wfs2cmodeval-1.conf : setval wfs2cmodeval-1.option.MODENORM ON
+20221113T211420.488729274 1668374060.488729274 FPS CMD TO fps.conf/fpssetup.confstart.wfs2cmodeval-1.conf : setval wfs2cmodeval-1.option.twait 0
+20221113T211420.489232880 1668374060.489232880 ON  CACAO_FPSPROC_MODALFILTERING
+20221113T211420.489995994 1668374060.489995994 Adding process mfilt
+20221113T211420.490718556 1668374060.490718556 FPS CMD TO fps.conf/fpssetup.confstart.mfilt-1.conf : setval mfilt-1.procinfo.loopcntMax -1
+20221113T211420.491120846 1668374060.491120846 FPS CMD TO fps.conf/fpssetup.confstart.mfilt-1.conf : setval mfilt-1.procinfo.triggermode 3
+20221113T211420.491536173 1668374060.491536173 FPS CMD TO fps.conf/fpssetup.confstart.mfilt-1.conf : setval mfilt-1.procinfo.triggersname aol1_modevalWFS
+20221113T211420.491931383 1668374060.491931383 FPS CMD TO fps.conf/fpssetup.confstart.mfilt-1.conf : setval mfilt-1.inmval aol1_modevalWFS
+20221113T211420.492336319 1668374060.492336319 FPS CMD TO fps.conf/fpssetup.confstart.mfilt-1.conf : setval mfilt-1.outmval aol1_modevalDM
+20221113T211420.492794964 1668374060.492794964 OFF CACAO_FPSPROC_MVM_ZPO
+20221113T211420.493227020 1668374060.493227020 OFF CACAO_FPSPROC_MODALCTRL_STATS
+20221113T211420.493705471 1668374060.493705471 ON  CACAO_FPSPROC_MVM_CMODEVAL2DM
+20221113T211420.494464531 1668374060.494464531 Adding process mvalC2dm
+20221113T211420.495219354 1668374060.495219354 FPS CMD TO fps.conf/fpssetup.confstart.mvalC2dm-1.conf : setval mvalC2dm-1.procinfo.loopcntMax -1
+20221113T211420.495624546 1668374060.495624546 FPS CMD TO fps.conf/fpssetup.confstart.mvalC2dm-1.conf : setval mvalC2dm-1.procinfo.triggermode 3
+20221113T211420.496054745 1668374060.496054745 FPS CMD TO fps.conf/fpssetup.confstart.mvalC2dm-1.conf : setval mvalC2dm-1.procinfo.triggersname aol1_modevalDM
+20221113T211420.496459258 1668374060.496459258 FPS CMD TO fps.conf/fpssetup.confstart.mvalC2dm-1.conf : setval mvalC2dm-1.insname aol1_modevalDM
+20221113T211420.496904050 1668374060.496904050 FPS CMD TO fps.conf/fpssetup.confstart.mvalC2dm-1.conf : setval mvalC2dm-1.immodes aol1_DMmodes
+20221113T211420.497303788 1668374060.497303788 FPS CMD TO fps.conf/fpssetup.confstart.mvalC2dm-1.conf : setval mvalC2dm-1.outcoeff aol1_dmC
+20221113T211420.497712599 1668374060.497712599 FPS CMD TO fps.conf/fpssetup.confstart.mvalC2dm-1.conf : setval mvalC2dm-1.option.sname_intot NULL
+20221113T211420.498128189 1668374060.498128189 FPS CMD TO fps.conf/fpssetup.confstart.mvalC2dm-1.conf : setval mvalC2dm-1.option.sname_refin NULL
+20221113T211420.498527150 1668374060.498527150 FPS CMD TO fps.conf/fpssetup.confstart.mvalC2dm-1.conf : setval mvalC2dm-1.outinit OFF
+20221113T211420.498933160 1668374060.498933160 FPS CMD TO fps.conf/fpssetup.confstart.mvalC2dm-1.conf : setval mvalC2dm-1.GPUindex 3
+20221113T211420.499329282 1668374060.499329282 FPS CMD TO fps.conf/fpssetup.confstart.mvalC2dm-1.conf : setval mvalC2dm-1.option.axmode 1
+20221113T211420.499730041 1668374060.499730041 FPS CMD TO fps.conf/fpssetup.confstart.mvalC2dm-1.conf : setval mvalC2dm-1.option.PROCESS OFF
+20221113T211420.500125318 1668374060.500125318 FPS CMD TO fps.conf/fpssetup.confstart.mvalC2dm-1.conf : setval mvalC2dm-1.option.TRACEMODE OFF
+20221113T211420.500528676 1668374060.500528676 FPS CMD TO fps.conf/fpssetup.confstart.mvalC2dm-1.conf : setval mvalC2dm-1.option.MODENORM OFF
+20221113T211420.500937441 1668374060.500937441 FPS CMD TO fps.conf/fpssetup.confstart.mvalC2dm-1.conf : setval mvalC2dm-1.option.twait 0
+20221113T211420.501404539 1668374060.501404539 OFF CACAO_FPSPROC_MVMGPU_OLMODEVAL2DM
+20221113T211420.501862158 1668374060.501862158 OFF CACAO_FPSPROC_MVMGPU_WFSMODEVAL2DM
+20221113T211420.502304989 1668374060.502304989 CACAO_FPSPROC_CMDMCOMB = OFF
+20221113T211420.502777543 1668374060.502777543 OFF CACAO_FPSPROC_ACQLINCMRM
+20221113T211420.503199132 1668374060.503199132 OFF CACAO_FPSPROC_DMATMTURB
+20221113T211420.503630564 1668374060.503630564 OFF CACAO_FPSPROC_MKPF00
+20221113T211420.504037869 1668374060.504037869 OFF CACAO_FPSPROC_MKPF01
+20221113T211420.504444811 1668374060.504444811 OFF CACAO_FPSPROC_MKPF02
+20221113T211420.504839798 1668374060.504839798 OFF CACAO_FPSPROC_MKPF03
+20221113T211420.505243811 1668374060.505243811 OFF CACAO_FPSPROC_MKPF04
+20221113T211420.505647964 1668374060.505647964 OFF CACAO_FPSPROC_MKPF05
+20221113T211420.506045761 1668374060.506045761 OFF CACAO_FPSPROC_APPLYPF00
+20221113T211420.506447088 1668374060.506447088 OFF CACAO_FPSPROC_APPLYPF01
+20221113T211420.506850512 1668374060.506850512 OFF CACAO_FPSPROC_APPLYPF02
+20221113T211420.507247321 1668374060.507247321 OFF CACAO_FPSPROC_APPLYPF03
+20221113T211420.507654724 1668374060.507654724 OFF CACAO_FPSPROC_APPLYPF04
+20221113T211420.508055642 1668374060.508055642 OFF CACAO_FPSPROC_APPLYPF05
+20221113T211420.508458620 1668374060.508458620 END
+/usr/local/milk/bin/cacao-setup: line 801: ./kalaohardware.fpslistadd: No such file or directory
+20221113T211420.509068927 1668374060.509068927 mv fpslist.txt dmloop-workdir
+20221113T211420.675854844 1668374060.675854844 SENDING CMD confstop TO ALL CONF PROCESSES
+20221113T211420.676444951 1668374060.676444951 command confstop for FPS DMch2disp-01
+20221113T211420.677024491 1668374060.677024491 command confstop for FPS streamDelay-01
+20221113T211420.677638179 1668374060.677638179 command confstop for FPS simmvmgpu-1
+20221113T211420.678186364 1668374060.678186364 command confstop for FPS mlat-1
+20221113T211420.678743128 1668374060.678743128 command confstop for FPS acquWFS-1
+20221113T211420.679300642 1668374060.679300642 command confstop for FPS acqlin_zRM-1
+20221113T211420.679859204 1668374060.679859204 command confstop for FPS acqlin_loRM-1
+20221113T211420.680419556 1668374060.680419556 command confstop for FPS compfCM-1
+20221113T211420.680968912 1668374060.680968912 command confstop for FPS compsCM-1
+20221113T211420.681509686 1668374060.681509686 command confstop for FPS modesextractWFSGPU-1
+20221113T211420.682042485 1668374060.682042485 command confstop for FPS loopRUN-1
+20221113T211420.682605769 1668374060.682605769 command confstop for FPS wfs2cmodeval-1
+20221113T211420.683190548 1668374060.683190548 command confstop for FPS mfilt-1
+20221113T211420.683733171 1668374060.683733171 command confstop for FPS mvalC2dm-1
+20221113T211420.684249333 1668374060.684249333 SENDING CMD confstart TO ALL CONF PROCESSES
+20221113T211420.684805497 1668374060.684805497 command confstart for FPS DMch2disp-01
+20221113T211420.685273056 1668374060.685273056 # Function Parameter Structure (FPS) setup configuration
+20221113T211420.685725400 1668374060.685725400 # Written by cacao-fpslistadd - edits will be overwritten and lost when re-running /usr/local/milk/bin/cacao-setup
+20221113T211420.686165100 1668374060.686165100 # These are the default initial values for FPS entries
+20221113T211420.686607127 1668374060.686607127 # This file is read by milk-fpsCTRL upon launching FPS conf process
+20221113T211420.687039476 1668374060.687039476 # 
+20221113T211420.687484253 1668374060.687484253 setval DMch2disp-01.procinfo.loopcntMax -1
+20221113T211420.687915294 1668374060.687915294 setval DMch2disp-01.procinfo.triggermode 4
+20221113T211420.688344999 1668374060.688344999 setval DMch2disp-01.procinfo.triggerdelay 0.00001
+20221113T211420.688823008 1668374060.688823008 setval DMch2disp-01.procinfo.triggertimeout 0.00001
+20221113T211420.689244626 1668374060.689244626 setval DMch2disp-01.DMindex 01
+20221113T211420.689750775 1668374060.689750775 setval DMch2disp-01.DMxsize 12
+20221113T211420.690167264 1668374060.690167264 setval DMch2disp-01.DMysize 12
+20221113T211420.690583637 1668374060.690583637 setval DMch2disp-01.DMcombout dm01disp
+20221113T211420.691056000 1668374060.691056000 setval DMch2disp-01.astrogrid aol1_DMastrogrid
+20221113T211420.691500364 1668374060.691500364 setval DMch2disp-01.zpoffset.DMcomboutzpo aol1_dmzpo
+20221113T211420.692093061 1668374060.692093061 command confstart for FPS streamDelay-01
+20221113T211420.692544213 1668374060.692544213 # Function Parameter Structure (FPS) setup configuration
+20221113T211420.693028640 1668374060.693028640 # Written by cacao-fpslistadd - edits will be overwritten and lost when re-running /usr/local/milk/bin/cacao-setup
+20221113T211420.693497096 1668374060.693497096 # These are the default initial values for FPS entries
+20221113T211420.693957287 1668374060.693957287 # This file is read by milk-fpsCTRL upon launching FPS conf process
+20221113T211420.694404331 1668374060.694404331 # 
+20221113T211420.694836817 1668374060.694836817 setval streamDelay-01.procinfo.loopcntMax -1
+20221113T211420.695305294 1668374060.695305294 setval streamDelay-01.procinfo.triggermode 4
+20221113T211420.695753513 1668374060.695753513 setval streamDelay-01.procinfo.triggerdelay 0.0001
+20221113T211420.696205765 1668374060.696205765 setval streamDelay-01.in_name aol1_dmdisp
+20221113T211420.696768951 1668374060.696768951 setval streamDelay-01.out_name aol1_dmdispD
+20221113T211420.697203570 1668374060.697203570 setval streamDelay-01.delaysec 0.01
+20221113T211420.697809237 1668374060.697809237 command confstart for FPS simmvmgpu-1
+20221113T211420.698322537 1668374060.698322537 # Function Parameter Structure (FPS) setup configuration
+20221113T211420.698778745 1668374060.698778745 # Written by cacao-fpslistadd - edits will be overwritten and lost when re-running /usr/local/milk/bin/cacao-setup
+20221113T211420.699253589 1668374060.699253589 # These are the default initial values for FPS entries
+20221113T211420.699768247 1668374060.699768247 # This file is read by milk-fpsCTRL upon launching FPS conf process
+20221113T211420.700254751 1668374060.700254751 # 
+20221113T211420.700735599 1668374060.700735599 setval simmvmgpu-1.insname aol1_dmdispD
+20221113T211420.701186394 1668374060.701186394 setval simmvmgpu-1.immodes aolsimLHSrespM
+20221113T211420.701634810 1668374060.701634810 setval simmvmgpu-1.outcoeff aol1_linsimWFS
+20221113T211420.702108759 1668374060.702108759 setval simmvmgpu-1.outinit ON
+20221113T211420.702563652 1668374060.702563652 setval simmvmgpu-1.procinfo.loopcntMax -1
+20221113T211420.703023767 1668374060.703023767 setval simmvmgpu-1.procinfo.triggermode 4
+20221113T211420.703481436 1668374060.703481436 setval simmvmgpu-1.procinfo.triggerdelay 0.001
+20221113T211420.703956228 1668374060.703956228 setval simmvmgpu-1.procinfo.triggertimeout 0.0
+20221113T211420.704401872 1668374060.704401872 setval simmvmgpu-1.option.axmode 1
+20221113T211420.704851089 1668374060.704851089 setval simmvmgpu-1.option.PROCESS OFF
+20221113T211420.705301750 1668374060.705301750 setval simmvmgpu-1.option.TRACEMODE OFF
+20221113T211420.705799164 1668374060.705799164 setval simmvmgpu-1.option.MODENORM OFF
+20221113T211420.706232847 1668374060.706232847 setval simmvmgpu-1.option.sname_intot NULL
+20221113T211420.706665493 1668374060.706665493 setval simmvmgpu-1.option.sname_refin NULL
+20221113T211420.707113170 1668374060.707113170 setval simmvmgpu-1.option.sname_refout aolsimLHSwfsref
+20221113T211420.707653664 1668374060.707653664 command confstart for FPS mlat-1
+20221113T211420.708128751 1668374060.708128751 # Function Parameter Structure (FPS) setup configuration
+20221113T211420.708583989 1668374060.708583989 # Written by cacao-fpslistadd - edits will be overwritten and lost when re-running /usr/local/milk/bin/cacao-setup
+20221113T211420.709041418 1668374060.709041418 # These are the default initial values for FPS entries
+20221113T211420.709544800 1668374060.709544800 # This file is read by milk-fpsCTRL upon launching FPS conf process
+20221113T211420.710007108 1668374060.710007108 # 
+20221113T211420.710496219 1668374060.710496219 setval mlat-1.NBiter 20
+20221113T211420.710943059 1668374060.710943059 setval mlat-1.dmstream aol1_dmRM
+20221113T211420.711406333 1668374060.711406333 setval mlat-1.wfsstream aol1_wfsim
+20221113T211420.711969444 1668374060.711969444 command confstart for FPS acquWFS-1
+20221113T211420.712459380 1668374060.712459380 # Function Parameter Structure (FPS) setup configuration
+20221113T211420.712936217 1668374060.712936217 # Written by cacao-fpslistadd - edits will be overwritten and lost when re-running /usr/local/milk/bin/cacao-setup
+20221113T211420.713398131 1668374060.713398131 # These are the default initial values for FPS entries
+20221113T211420.713846185 1668374060.713846185 # This file is read by milk-fpsCTRL upon launching FPS conf process
+20221113T211420.714304996 1668374060.714304996 # 
+20221113T211420.714749901 1668374060.714749901 setval acquWFS-1.AOloopindex 1
+20221113T211420.715195628 1668374060.715195628 setval acquWFS-1.procinfo.loopcntMax -1
+20221113T211420.715629545 1668374060.715629545 setval acquWFS-1.procinfo.triggermode 3
+20221113T211420.716058751 1668374060.716058751 setval acquWFS-1.procinfo.triggersname aol1_wfsim 
+20221113T211420.716539839 1668374060.716539839 setval acquWFS-1.comp.WFSnormalize ON
+20221113T211420.717004962 1668374060.717004962 setval acquWFS-1.comp.darksub ON
+20221113T211420.717451142 1668374060.717451142 setval acquWFS-1.comp.imtotal ON
+20221113T211420.717897447 1668374060.717897447 setval acquWFS-1.comp.normwfsim ON
+20221113T211420.718371768 1668374060.718371768 setval acquWFS-1.wfszpo aol1_wfszpo
+20221113T211420.718921165 1668374060.718921165 command confstart for FPS acqlin_zRM-1
+20221113T211420.719378197 1668374060.719378197 # Function Parameter Structure (FPS) setup configuration
+20221113T211420.719809573 1668374060.719809573 # Written by cacao-fpslistadd - edits will be overwritten and lost when re-running /usr/local/milk/bin/cacao-setup
+20221113T211420.720247099 1668374060.720247099 # These are the default initial values for FPS entries
+20221113T211420.720684917 1668374060.720684917 # This file is read by milk-fpsCTRL upon launching FPS conf process
+20221113T211420.721122795 1668374060.721122795 # 
+20221113T211420.721551335 1668374060.721551335 setval acqlin_zRM-1.AOloopindex 1
+20221113T211420.721980982 1668374060.721980982 setval acqlin_zRM-1.FPS_mlat mlat-1
+20221113T211420.722477697 1668374060.722477697 setval acqlin_zRM-1.FPS_DMcomb DMch2disp-01
+20221113T211420.722914800 1668374060.722914800 setval acqlin_zRM-1.normalize ON
+20221113T211420.723353972 1668374060.723353972 setval acqlin_zRM-1.Hpoke ON
+20221113T211420.723783447 1668374060.723783447 setval acqlin_zRM-1.autoTiming ON
+20221113T211420.724208203 1668374060.724208203 setval acqlin_zRM-1.compDMmask ON
+20221113T211420.724657320 1668374060.724657320 setval acqlin_zRM-1.compMpoke ON
+20221113T211420.725091873 1668374060.725091873 setval acqlin_zRM-1.timing.NBave 1
+20221113T211420.725554938 1668374060.725554938 setval acqlin_zRM-1.timing.NBcycle 2
+20221113T211420.725975439 1668374060.725975439 setval acqlin_zRM-1.timing.NBinnerCycle 1
+20221113T211420.726402632 1668374060.726402632 setval acqlin_zRM-1.timing.NBexcl 0
+20221113T211420.726834750 1668374060.726834750 setval acqlin_zRM-1.MaskMode ON
+20221113T211420.727274516 1668374060.727274516 setval acqlin_zRM-1.exec.RMdecode cacaobin/cacao-RMdecode
+20221113T211420.727703907 1668374060.727703907 setval acqlin_zRM-1.exec.mkDMWFSmasks cacaobin/cacao-mkDMWFSmasks
+20221113T211420.728130019 1668374060.728130019 setval acqlin_zRM-1.exec.mkDMslaveact cacaobin/cacao-mkDMslaveActprox
+20221113T211420.728567851 1668374060.728567851 setval acqlin_zRM-1.exec.mkLODMmodes cacaobin/cacao-mkLODMmodes
+20221113T211420.729091623 1668374060.729091623 command confstart for FPS acqlin_loRM-1
+20221113T211420.729538621 1668374060.729538621 # Function Parameter Structure (FPS) setup configuration
+20221113T211420.729970863 1668374060.729970863 # Written by cacao-fpslistadd - edits will be overwritten and lost when re-running /usr/local/milk/bin/cacao-setup
+20221113T211420.730405584 1668374060.730405584 # These are the default initial values for FPS entries
+20221113T211420.730842227 1668374060.730842227 # This file is read by milk-fpsCTRL upon launching FPS conf process
+20221113T211420.731267080 1668374060.731267080 # 
+20221113T211420.731687391 1668374060.731687391 setval acqlin_loRM-1.AOloopindex 1
+20221113T211420.732111772 1668374060.732111772 setval acqlin_loRM-1.FPS_mlat mlat-1
+20221113T211420.732548666 1668374060.732548666 setval acqlin_loRM-1.FPS_DMcomb DMch2disp-01
+20221113T211420.732983975 1668374060.732983975 setval acqlin_loRM-1.normalize ON
+20221113T211420.733401483 1668374060.733401483 setval acqlin_loRM-1.Hpoke OFF
+20221113T211420.733893326 1668374060.733893326 setval acqlin_loRM-1.autoTiming ON
+20221113T211420.734356158 1668374060.734356158 setval acqlin_loRM-1.compDMmask OFF
+20221113T211420.734802414 1668374060.734802414 setval acqlin_loRM-1.compMpoke OFF
+20221113T211420.735236784 1668374060.735236784 setval acqlin_loRM-1.timing.NBave 1
+20221113T211420.735685392 1668374060.735685392 setval acqlin_loRM-1.timing.NBcycle 4
+20221113T211420.736112157 1668374060.736112157 setval acqlin_loRM-1.timing.NBinnerCycle 1
+20221113T211420.736569914 1668374060.736569914 setval acqlin_loRM-1.timing.NBexcl 0
+20221113T211420.737010996 1668374060.737010996 setval acqlin_loRM-1.fn_pokeC respM_LOmodes.fits
+20221113T211420.737451868 1668374060.737451868 setval acqlin_loRM-1.MaskMode OFF
+20221113T211420.737875315 1668374060.737875315 setval acqlin_loRM-1.exec.RMdecode cacaobin/cacao-NULL
+20221113T211420.738363600 1668374060.738363600 setval acqlin_loRM-1.exec.mkDMWFSmasks cacaobin/cacao-NULL
+20221113T211420.738815624 1668374060.738815624 setval acqlin_loRM-1.exec.mkDMslaveact cacaobin/cacao-NULL
+20221113T211420.739263573 1668374060.739263573 setval acqlin_loRM-1.exec.mkLODMmodes cacaobin/cacao-NULL
+20221113T211420.739816223 1668374060.739816223 command confstart for FPS compfCM-1
+20221113T211420.740343099 1668374060.740343099 # Function Parameter Structure (FPS) setup configuration
+20221113T211420.740806930 1668374060.740806930 # Written by cacao-fpslistadd - edits will be overwritten and lost when re-running /usr/local/milk/bin/cacao-setup
+20221113T211420.741250337 1668374060.741250337 # These are the default initial values for FPS entries
+20221113T211420.741690007 1668374060.741690007 # This file is read by milk-fpsCTRL upon launching FPS conf process
+20221113T211420.742134894 1668374060.742134894 # 
+20221113T211420.742569429 1668374060.742569429 setval compfCM-1.AOloopindex 1
+20221113T211420.742996797 1668374060.742996797 setval compfCM-1.FPS_zRMacqu acqlin_zRM-1
+20221113T211420.743459375 1668374060.743459375 setval compfCM-1.FPS_loRMacqu acqlin_loRM-1
+20221113T211420.743898046 1668374060.743898046 setval compfCM-1.FPS_DMcomb DMch2disp-01
+20221113T211420.744471087 1668374060.744471087 command confstart for FPS compsCM-1
+20221113T211420.744939420 1668374060.744939420 # Function Parameter Structure (FPS) setup configuration
+20221113T211420.745408149 1668374060.745408149 # Written by cacao-fpslistadd - edits will be overwritten and lost when re-running /usr/local/milk/bin/cacao-setup
+20221113T211420.745855622 1668374060.745855622 # These are the default initial values for FPS entries
+20221113T211420.746293450 1668374060.746293450 # This file is read by milk-fpsCTRL upon launching FPS conf process
+20221113T211420.746748186 1668374060.746748186 # 
+20221113T211420.747194211 1668374060.747194211 setval compsCM-1.AOloopindex 1
+20221113T211420.747649835 1668374060.747649835 setval compsCM-1.fname_respM fps.acqlin_zRM-1.datadir/zrespM_mn.fits
+20221113T211420.748191782 1668374060.748191782 command confstart for FPS modesextractWFSGPU-1
+20221113T211420.748674027 1668374060.748674027 # Function Parameter Structure (FPS) setup configuration
+20221113T211420.749113637 1668374060.749113637 # Written by cacao-fpslistadd - edits will be overwritten and lost when re-running /usr/local/milk/bin/cacao-setup
+20221113T211420.749574283 1668374060.749574283 # These are the default initial values for FPS entries
+20221113T211420.750016340 1668374060.750016340 # This file is read by milk-fpsCTRL upon launching FPS conf process
+20221113T211420.750462399 1668374060.750462399 # 
+20221113T211420.750901227 1668374060.750901227 setval modesextractWFSGPU-1.AOloopindex 1
+20221113T211420.751352882 1668374060.751352882 setval modesextractWFSGPU-1.sname_in aol1_imWFS0
+20221113T211420.751793650 1668374060.751793650 setval modesextractWFSGPU-1.option.sname_intot aol1_imWFS0tot
+20221113T211420.752389599 1668374060.752389599 setval modesextractWFSGPU-1.sname_modes aol1_modesWFS
+20221113T211420.752840105 1668374060.752840105 setval modesextractWFSGPU-1.option.sname_refin aol1_wfsref
+20221113T211420.753299350 1668374060.753299350 setval modesextractWFSGPU-1.sname_outmodesval aol1_modeval
+20221113T211420.753766641 1668374060.753766641 setval modesextractWFSGPU-1.outinit ON
+20221113T211420.754214206 1668374060.754214206 setval modesextractWFSGPU-1.option.GPUindex 0
+20221113T211420.754691889 1668374060.754691889 setval modesextractWFSGPU-1.option.PROCESS ON
+20221113T211420.755153078 1668374060.755153078 setval modesextractWFSGPU-1.option.TRACEMODE ON
+20221113T211420.755613946 1668374060.755613946 setval modesextractWFSGPU-1.option.MODENORM ON
+20221113T211420.756083517 1668374060.756083517 setval modesextractWFSGPU-1.option.insem 2
+20221113T211420.756535953 1668374060.756535953 setval modesextractWFSGPU-1.option.axmode 0
+20221113T211420.756979950 1668374060.756979950 setval modesextractWFSGPU-1.option.twait 0
+20221113T211420.757552550 1668374060.757552550 command confstart for FPS loopRUN-1
+20221113T211420.758015736 1668374060.758015736 # Function Parameter Structure (FPS) setup configuration
+20221113T211420.758496436 1668374060.758496436 # Written by cacao-fpslistadd - edits will be overwritten and lost when re-running /usr/local/milk/bin/cacao-setup
+20221113T211420.758923603 1668374060.758923603 # These are the default initial values for FPS entries
+20221113T211420.759353842 1668374060.759353842 # This file is read by milk-fpsCTRL upon launching FPS conf process
+20221113T211420.759784237 1668374060.759784237 # 
+20221113T211420.760226556 1668374060.760226556 setval loopRUN-1.AOloopindex 1
+20221113T211420.760676284 1668374060.760676284 setval loopRUN-1.sn_wfs aol1_imWFS1
+20221113T211420.761114513 1668374060.761114513 setval loopRUN-1.loopgain 0.02
+20221113T211420.761555594 1668374060.761555594 setval loopRUN-1.loopmult 0.99
+20221113T211420.761986373 1668374060.761986373 setval loopRUN-1.loopON OFF
+20221113T211420.762476610 1668374060.762476610 setval loopRUN-1.loopZERO OFF
+20221113T211420.762931034 1668374060.762931034 setval loopRUN-1.wfsrefON OFF
+20221113T211420.763374795 1668374060.763374795 setval loopRUN-1.sn_cmat aol1_CMat
+20221113T211420.763803979 1668374060.763803979 setval loopRUN-1.sn_DMout aol1_dmC
+20221113T211420.764392192 1668374060.764392192 command confstart for FPS wfs2cmodeval-1
+20221113T211420.764847911 1668374060.764847911 # Function Parameter Structure (FPS) setup configuration
+20221113T211420.765280480 1668374060.765280480 # Written by cacao-fpslistadd - edits will be overwritten and lost when re-running /usr/local/milk/bin/cacao-setup
+20221113T211420.765748634 1668374060.765748634 # These are the default initial values for FPS entries
+20221113T211420.766214961 1668374060.766214961 # This file is read by milk-fpsCTRL upon launching FPS conf process
+20221113T211420.766687440 1668374060.766687440 # 
+20221113T211420.767135106 1668374060.767135106 setval wfs2cmodeval-1.procinfo.loopcntMax -1
+20221113T211420.767622073 1668374060.767622073 setval wfs2cmodeval-1.procinfo.triggermode 3
+20221113T211420.768078801 1668374060.768078801 setval wfs2cmodeval-1.procinfo.triggersname aol1_imWFS1
+20221113T211420.768598307 1668374060.768598307 setval wfs2cmodeval-1.insname aol1_imWFS1
+20221113T211420.769035147 1668374060.769035147 setval wfs2cmodeval-1.immodes aol1_modesWFS
+20221113T211420.769497272 1668374060.769497272 setval wfs2cmodeval-1.outcoeff aol1_modevalWFS
+20221113T211420.769931581 1668374060.769931581 setval wfs2cmodeval-1.option.sname_intot aol1_imWFS0tot
+20221113T211420.770363200 1668374060.770363200 setval wfs2cmodeval-1.option.sname_refin aol1_wfsref
+20221113T211420.770795578 1668374060.770795578 setval wfs2cmodeval-1.outinit ON
+20221113T211420.771214749 1668374060.771214749 setval wfs2cmodeval-1.GPUindex 0
+20221113T211420.771694616 1668374060.771694616 setval wfs2cmodeval-1.option.PROCESS ON
+20221113T211420.772115008 1668374060.772115008 setval wfs2cmodeval-1.option.TRACEMODE OFF
+20221113T211420.772579714 1668374060.772579714 setval wfs2cmodeval-1.option.MODENORM ON
+20221113T211420.773015696 1668374060.773015696 setval wfs2cmodeval-1.option.twait 0
+20221113T211420.773556059 1668374060.773556059 command confstart for FPS mfilt-1
+20221113T211420.774054612 1668374060.774054612 # Function Parameter Structure (FPS) setup configuration
+20221113T211420.774503236 1668374060.774503236 # Written by cacao-fpslistadd - edits will be overwritten and lost when re-running /usr/local/milk/bin/cacao-setup
+20221113T211420.774946657 1668374060.774946657 # These are the default initial values for FPS entries
+20221113T211420.775377052 1668374060.775377052 # This file is read by milk-fpsCTRL upon launching FPS conf process
+20221113T211420.775801844 1668374060.775801844 # 
+20221113T211420.776225525 1668374060.776225525 setval mfilt-1.procinfo.loopcntMax -1
+20221113T211420.776672949 1668374060.776672949 setval mfilt-1.procinfo.triggermode 3
+20221113T211420.777098890 1668374060.777098890 setval mfilt-1.procinfo.triggersname aol1_modevalWFS
+20221113T211420.777515838 1668374060.777515838 setval mfilt-1.inmval aol1_modevalWFS
+20221113T211420.777950738 1668374060.777950738 setval mfilt-1.outmval aol1_modevalDM
+20221113T211420.778538266 1668374060.778538266 command confstart for FPS mvalC2dm-1
+20221113T211420.778989466 1668374060.778989466 # Function Parameter Structure (FPS) setup configuration
+20221113T211420.779406230 1668374060.779406230 # Written by cacao-fpslistadd - edits will be overwritten and lost when re-running /usr/local/milk/bin/cacao-setup
+20221113T211420.779841687 1668374060.779841687 # These are the default initial values for FPS entries
+20221113T211420.780267325 1668374060.780267325 # This file is read by milk-fpsCTRL upon launching FPS conf process
+20221113T211420.780703833 1668374060.780703833 # 
+20221113T211420.781141751 1668374060.781141751 setval mvalC2dm-1.procinfo.loopcntMax -1
+20221113T211420.781617383 1668374060.781617383 setval mvalC2dm-1.procinfo.triggermode 3
+20221113T211420.782029772 1668374060.782029772 setval mvalC2dm-1.procinfo.triggersname aol1_modevalDM
+20221113T211420.782450721 1668374060.782450721 setval mvalC2dm-1.insname aol1_modevalDM
+20221113T211420.782918441 1668374060.782918441 setval mvalC2dm-1.immodes aol1_DMmodes
+20221113T211420.783345078 1668374060.783345078 setval mvalC2dm-1.outcoeff aol1_dmC
+20221113T211420.783849405 1668374060.783849405 setval mvalC2dm-1.option.sname_intot NULL
+20221113T211420.784289744 1668374060.784289744 setval mvalC2dm-1.option.sname_refin NULL
+20221113T211420.784732129 1668374060.784732129 setval mvalC2dm-1.outinit OFF
+20221113T211420.785169488 1668374060.785169488 setval mvalC2dm-1.GPUindex 3
+20221113T211420.785775431 1668374060.785775431 setval mvalC2dm-1.option.axmode 1
+20221113T211420.786280021 1668374060.786280021 setval mvalC2dm-1.option.PROCESS OFF
+20221113T211420.786746432 1668374060.786746432 setval mvalC2dm-1.option.TRACEMODE OFF
+20221113T211420.787181480 1668374060.787181480 setval mvalC2dm-1.option.MODENORM OFF
+20221113T211420.787640669 1668374060.787640669 setval mvalC2dm-1.option.twait 0
+20221113T211420.788125762 1668374060.788125762 
+20221113T211420.788570271 1668374060.788570271 FIFO: /tmp/milk/kalaohardware_fpsCTRL.fifo
+20221113T211420.792845777 1668374060.792845777 # File generated by /usr/local/milk/bin/cacao-setup
+20221113T211420.793348244 1668374060.793348244 # Do not edit
+20221113T211420.793813662 1668374060.793813662 
+20221113T211420.794273384 1668374060.794273384 # set function parameters
+20221113T211420.794776336 1668374060.794776336 # string 1 and 01 will be replaced by loop number and dm index number
+20221113T211420.795212839 1668374060.795212839 
+20221113T211420.795687478 1668374060.795687478 #TTM_CHINDEX = 2
+20221113T211420.796140389 1668374060.796140389 #DM_CHINDEX = 2
+20221113T211420.796610086 1668374060.796610086 #DM_WFSSTREAM = $CACAO_WFSSTREAM = shwfs_slopes
+20221113T211420.797049326 1668374060.797049326 
+20221113T211420.797497378 1668374060.797497378 setval DMch2disp01.DMindex 01
+20221113T211420.797938853 1668374060.797938853 setval DMch2disp01.DMxsize 12
+20221113T211420.798380571 1668374060.798380571 setval DMch2disp01.DMysize 12
+20221113T211420.798814032 1668374060.798814032 
+20221113T211420.799236378 1668374060.799236378 setval DMch2disp01.DMindex 01
+20221113T211420.799659707 1668374060.799659707 
+20221113T211420.800122748 1668374060.800122748 # BMC setup
+20221113T211420.800646987 1668374060.800646987 setval bmc_display.DMin dm01disp
+20221113T211420.801093963 1668374060.801093963 setval bmc_display.TTMin dm01disp
+20221113T211420.801596759 1668374060.801596759 setval bmc_display.procinfo.loopcntMax -1
+20221113T211420.802037519 1668374060.802037519 setval bmc_display.procinfo.triggermode 0
+20221113T211420.802494383 1668374060.802494383 setval bmc_display.procinfo.triggermode 3
+20221113T211420.802929569 1668374060.802929569 setval bmc_display.procinfo.triggersname dm01disp
+20221113T211420.803378529 1668374060.803378529 setval bmc_display.procinfo.triggertimeout 0.0001
+20221113T211420.803855898 1668374060.803855898 
+20221113T211420.804318857 1668374060.804318857 setval bmc_display.ttm_tip_offset -0.05
+20221113T211420.804768265 1668374060.804768265 setval bmc_display.ttm_tilt_offset 0.0"
+20221113T211420.805202135 1668374060.805202135 
+20221113T211420.805727543 1668374060.805727543 setval bmc_display.procinfo.RTprio 8
+20221113T211420.806725544 1668374060.806725544 setval bmc_display.conf.taskset 1
+20221113T211420.807409647 1668374060.807409647 
+20221113T211420.807888291 1668374060.807888291 # Camstack setting
+20221113T211420.808355587 1668374060.808355587 setval nuvu_acquire.procinfo.RTprio 10
+20221113T211420.808808894 1668374060.808808894 setval nuvu_acquire.procinfo.loopcntMax -1
+20221113T211420.809341204 1668374060.809341204 setval nuvu_acquire.procinfo.triggermode 3
+20221113T211420.809811808 1668374060.809811808 setval nuvu_acquire.procinfo.triggersname nuvu_raw
+20221113T211420.810281634 1668374060.810281634 
+20221113T211420.810759123 1668374060.810759123 setval nuvu_acquire.exposuretime 0
+20221113T211420.811235453 1668374060.811235453 setval nuvu_acquire.autogain_params autogain_params.txt
+20221113T211420.811695669 1668374060.811695669 
+20221113T211420.812169113 1668374060.812169113 #SHWFS setup
+20221113T211420.812641529 1668374060.812641529 setval shwfs_process.procinfo.loopcntMax -1
+20221113T211420.813116393 1668374060.813116393 setval shwfs_process.procinfo.triggermode 3
+20221113T211420.813575954 1668374060.813575954 setval shwfs_process.procinfo.triggersname nuvu_stream
+20221113T211420.814030979 1668374060.814030979 
+20221113T211420.814509542 1668374060.814509542 setval shwfs_process.rawWFSin nuvu_stream
+20221113T211420.815011718 1668374060.815011718 setval shwfs_process.spotcoords spots.txt
+20221113T211420.815488576 1668374060.815488576 setval shwfs_process.outWFS shwfs_slopes
+/bin/bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+
+    Linking streams ...
+/bin/bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+SHMDIR = /tmp/milk
+    Linking aol1_dmC
+
+[32m   LOADED : /usr/local/milk-1.03.00/lib/libcacaoKalAONuvu.so
+[0m[32m   LOADED : /usr/local/milk-1.03.00/lib/libcacaoKalAOBMC.so
+[0m[32m   LOADED : /usr/local/milk-1.03.00/lib/libcacaoKalAOSHWFS.so
+[0m
+[0;96mmilk > [0mreadshmim aol1_dmC
+[1;35mWARNING   [0;m
+[1;35m Cannot open file "/tmp/milk/aol1_dmC.im.shm"
+  [0;m
+read shared mem image failed -> ID = -1
+[0;96mmilk > [0mreadshmimsize aol1_dmC "./conf/streamlink.dmC.imsize.txt"
+Cannot import file - continuing
+[0;96mmilk > [0mexitCLI
+[0;96mmilk > [0m
+/bin/bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+SHMDIR = /tmp/milk
+    Linking aol1_dmO
+
+[32m   LOADED : /usr/local/milk-1.03.00/lib/libcacaoKalAONuvu.so
+[0m[32m   LOADED : /usr/local/milk-1.03.00/lib/libcacaoKalAOBMC.so
+[0m[32m   LOADED : /usr/local/milk-1.03.00/lib/libcacaoKalAOSHWFS.so
+[0m
+[0;96mmilk > [0mreadshmim aol1_dmO
+[1;35mWARNING   [0;m
+[1;35m Cannot open file "/tmp/milk/aol1_dmO.im.shm"
+  [0;m
+read shared mem image failed -> ID = -1
+[0;96mmilk > [0mreadshmimsize aol1_dmO "./conf/streamlink.dmO.imsize.txt"
+Cannot import file - continuing
+[0;96mmilk > [0mexitCLI
+[0;96mmilk > [0m
+/bin/bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+SHMDIR = /tmp/milk
+rm: cannot remove '/tmp/milk/aol1_dmZP0.im.shm': No such file or directory
+    Linking aol1_dmZP0
+
+[32m   LOADED : /usr/local/milk-1.03.00/lib/libcacaoKalAONuvu.so
+[0m[32m   LOADED : /usr/local/milk-1.03.00/lib/libcacaoKalAOBMC.so
+[0m[32m   LOADED : /usr/local/milk-1.03.00/lib/libcacaoKalAOSHWFS.so
+[0m
+[0;96mmilk > [0mreadshmim aol1_dmZP0
+[1;35mWARNING   [0;m
+[1;35m Cannot open file "/tmp/milk/aol1_dmZP0.im.shm"
+  [0;m
+read shared mem image failed -> ID = -1
+[0;96mmilk > [0mreadshmimsize aol1_dmZP0 "./conf/streamlink.dmZP0.imsize.txt"
+Cannot import file - continuing
+[0;96mmilk > [0mexitCLI
+[0;96mmilk > [0m
+/bin/bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+SHMDIR = /tmp/milk
+rm: cannot remove '/tmp/milk/aol1_dmZP1.im.shm': No such file or directory
+    Linking aol1_dmZP1
+
+[32m   LOADED : /usr/local/milk-1.03.00/lib/libcacaoKalAONuvu.so
+[0m[32m   LOADED : /usr/local/milk-1.03.00/lib/libcacaoKalAOBMC.so
+[0m[32m   LOADED : /usr/local/milk-1.03.00/lib/libcacaoKalAOSHWFS.so
+[0m
+[0;96mmilk > [0mreadshmim aol1_dmZP1
+[1;35mWARNING   [0;m
+[1;35m Cannot open file "/tmp/milk/aol1_dmZP1.im.shm"
+  [0;m
+read shared mem image failed -> ID = -1
+[0;96mmilk > [0mreadshmimsize aol1_dmZP1 "./conf/streamlink.dmZP1.imsize.txt"
+Cannot import file - continuing
+[0;96mmilk > [0mexitCLI
+[0;96mmilk > [0m
+/bin/bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+SHMDIR = /tmp/milk
+rm: cannot remove '/tmp/milk/aol1_dmZP2.im.shm': No such file or directory
+    Linking aol1_dmZP2
+
+[32m   LOADED : /usr/local/milk-1.03.00/lib/libcacaoKalAONuvu.so
+[0m[32m   LOADED : /usr/local/milk-1.03.00/lib/libcacaoKalAOBMC.so
+[0m[32m   LOADED : /usr/local/milk-1.03.00/lib/libcacaoKalAOSHWFS.so
+[0m
+[0;96mmilk > [0mreadshmim aol1_dmZP2
+[1;35mWARNING   [0;m
+[1;35m Cannot open file "/tmp/milk/aol1_dmZP2.im.shm"
+  [0;m
+read shared mem image failed -> ID = -1
+[0;96mmilk > [0mreadshmimsize aol1_dmZP2 "./conf/streamlink.dmZP2.imsize.txt"
+Cannot import file - continuing
+[0;96mmilk > [0mexitCLI
+[0;96mmilk > [0m
+/bin/bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+SHMDIR = /tmp/milk
+rm: cannot remove '/tmp/milk/aol1_dmZP3.im.shm': No such file or directory
+    Linking aol1_dmZP3
+
+[32m   LOADED : /usr/local/milk-1.03.00/lib/libcacaoKalAONuvu.so
+[0m[32m   LOADED : /usr/local/milk-1.03.00/lib/libcacaoKalAOBMC.so
+[0m[32m   LOADED : /usr/local/milk-1.03.00/lib/libcacaoKalAOSHWFS.so
+[0m
+[0;96mmilk > [0mreadshmim aol1_dmZP3
+[1;35mWARNING   [0;m
+[1;35m Cannot open file "/tmp/milk/aol1_dmZP3.im.shm"
+  [0;m
+read shared mem image failed -> ID = -1
+[0;96mmilk > [0mreadshmimsize aol1_dmZP3 "./conf/streamlink.dmZP3.imsize.txt"
+Cannot import file - continuing
+[0;96mmilk > [0mexitCLI
+[0;96mmilk > [0m
+/bin/bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+SHMDIR = /tmp/milk
+rm: cannot remove '/tmp/milk/aol1_dmZP4.im.shm': No such file or directory
+    Linking aol1_dmZP4
+
+[32m   LOADED : /usr/local/milk-1.03.00/lib/libcacaoKalAONuvu.so
+[0m[32m   LOADED : /usr/local/milk-1.03.00/lib/libcacaoKalAOBMC.so
+[0m[32m   LOADED : /usr/local/milk-1.03.00/lib/libcacaoKalAOSHWFS.so
+[0m
+[0;96mmilk > [0mreadshmim aol1_dmZP4
+[1;35mWARNING   [0;m
+[1;35m Cannot open file "/tmp/milk/aol1_dmZP4.im.shm"
+  [0;m
+read shared mem image failed -> ID = -1
+[0;96mmilk > [0mreadshmimsize aol1_dmZP4 "./conf/streamlink.dmZP4.imsize.txt"
+Cannot import file - continuing
+[0;96mmilk > [0mexitCLI
+[0;96mmilk > [0m
+/bin/bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+SHMDIR = /tmp/milk
+rm: cannot remove '/tmp/milk/aol1_dmZP5.im.shm': No such file or directory
+    Linking aol1_dmZP5
+
+[32m   LOADED : /usr/local/milk-1.03.00/lib/libcacaoKalAONuvu.so
+[0m[32m   LOADED : /usr/local/milk-1.03.00/lib/libcacaoKalAOBMC.so
+[0m[32m   LOADED : /usr/local/milk-1.03.00/lib/libcacaoKalAOSHWFS.so
+[0m
+[0;96mmilk > [0mreadshmim aol1_dmZP5
+[1;35mWARNING   [0;m
+[1;35m Cannot open file "/tmp/milk/aol1_dmZP5.im.shm"
+  [0;m
+read shared mem image failed -> ID = -1
+[0;96mmilk > [0mreadshmimsize aol1_dmZP5 "./conf/streamlink.dmZP5.imsize.txt"
+Cannot import file - continuing
+[0;96mmilk > [0mexitCLI
+[0;96mmilk > [0m
+/bin/bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+SHMDIR = /tmp/milk
+rm: cannot remove '/tmp/milk/aol1_dmZP6.im.shm': No such file or directory
+    Linking aol1_dmZP6
+
+[32m   LOADED : /usr/local/milk-1.03.00/lib/libcacaoKalAONuvu.so
+[0m[32m   LOADED : /usr/local/milk-1.03.00/lib/libcacaoKalAOBMC.so
+[0m[32m   LOADED : /usr/local/milk-1.03.00/lib/libcacaoKalAOSHWFS.so
+[0m
+[0;96mmilk > [0mreadshmim aol1_dmZP6
+[1;35mWARNING   [0;m
+[1;35m Cannot open file "/tmp/milk/aol1_dmZP6.im.shm"
+  [0;m
+read shared mem image failed -> ID = -1
+[0;96mmilk > [0mreadshmimsize aol1_dmZP6 "./conf/streamlink.dmZP6.imsize.txt"
+Cannot import file - continuing
+[0;96mmilk > [0mexitCLI
+[0;96mmilk > [0m
+/bin/bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+SHMDIR = /tmp/milk
+rm: cannot remove '/tmp/milk/aol1_dmZP7.im.shm': No such file or directory
+    Linking aol1_dmZP7
+
+[32m   LOADED : /usr/local/milk-1.03.00/lib/libcacaoKalAONuvu.so
+[0m[32m   LOADED : /usr/local/milk-1.03.00/lib/libcacaoKalAOBMC.so
+[0m[32m   LOADED : /usr/local/milk-1.03.00/lib/libcacaoKalAOSHWFS.so
+[0m
+[0;96mmilk > [0mreadshmim aol1_dmZP7
+[1;35mWARNING   [0;m
+[1;35m Cannot open file "/tmp/milk/aol1_dmZP7.im.shm"
+  [0;m
+read shared mem image failed -> ID = -1
+[0;96mmilk > [0mreadshmimsize aol1_dmZP7 "./conf/streamlink.dmZP7.imsize.txt"
+Cannot import file - continuing
+[0;96mmilk > [0mexitCLI
+[0;96mmilk > [0m
+/bin/bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+SHMDIR = /tmp/milk
+    Linking aol1_dmdisp
+
+[32m   LOADED : /usr/local/milk-1.03.00/lib/libcacaoKalAONuvu.so
+[0m[32m   LOADED : /usr/local/milk-1.03.00/lib/libcacaoKalAOBMC.so
+[0m[32m   LOADED : /usr/local/milk-1.03.00/lib/libcacaoKalAOSHWFS.so
+[0m
+[0;96mmilk > [0mreadshmim aol1_dmdisp
+[1;35mWARNING   [0;m
+[1;35m Cannot open file "/tmp/milk/aol1_dmdisp.im.shm"
+  [0;m
+read shared mem image failed -> ID = -1
+[0;96mmilk > [0mreadshmimsize aol1_dmdisp "./conf/streamlink.dmdisp.imsize.txt""
+Cannot import file - continuing
+[0;96mmilk > [0mexitCLI
+[0;96mmilk > [0m
+/bin/bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+SHMDIR = /tmp/milk
+    Linking aol1_dmRM
+
+[32m   LOADED : /usr/local/milk-1.03.00/lib/libcacaoKalAONuvu.so
+[0m[32m   LOADED : /usr/local/milk-1.03.00/lib/libcacaoKalAOBMC.so
+[0m[32m   LOADED : /usr/local/milk-1.03.00/lib/libcacaoKalAOSHWFS.so
+[0m
+[0;96mmilk > [0mreadshmim aol1_dmRM
+[1;35mWARNING   [0;m
+[1;35m Cannot open file "/tmp/milk/aol1_dmRM.im.shm"
+  [0;m
+read shared mem image failed -> ID = -1
+[0;96mmilk > [0mreadshmimsize aol1_dmRM "./conf/streamlink.dmRM.imsize.txt"
+Cannot import file - continuing
+[0;96mmilk > [0mexitCLI
+[0;96mmilk > [0m
+    Removing pre-existing pokes ...
+rm: cannot remove './conf/RMpokeCubeZ.fits.gz': No such file or directory
+rm: cannot remove './conf/RMpokeCube.fits.gz': No such file or directory
+rm: cannot remove 'respM_LOmodes.fits': No such file or directory
+/bin/bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+SHMDIR = /tmp/milk
+rm: cannot remove '/tmp/milk/aol1_wfsim.im.shm': No such file or directory
+    Linking aol1_wfsim
+
+[32m   LOADED : /usr/local/milk-1.03.00/lib/libcacaoKalAONuvu.so
+[0m[32m   LOADED : /usr/local/milk-1.03.00/lib/libcacaoKalAOBMC.so
+[0m[32m   LOADED : /usr/local/milk-1.03.00/lib/libcacaoKalAOSHWFS.so
+[0m
+[0;96mmilk > [0mreadshmim aol1_wfsim
+[1;35mWARNING   [0;m
+[1;35m Cannot open file "/tmp/milk/aol1_wfsim.im.shm"
+  [0;m
+read shared mem image failed -> ID = -1
+[0;96mmilk > [0mreadshmimsize aol1_wfsim "./conf/streamlink.wfsim.imsize.txt"
+Cannot import file - continuing
+[0;96mmilk > [0mexitCLI
+[0;96mmilk > [0m
+20221113T211421.064145067 1668374061.064145067 END cacao-setup
