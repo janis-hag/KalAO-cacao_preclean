@@ -14,6 +14,12 @@ RequiredDirs=()
 ##### parse arguments
 source milk-argparse
 
+
+LOOP_CONFNAME="dmloopsim"
+LOOP_WORKDIR=$(<${DM_CONFNAME}-conf/WORKDIR)
+LOOP_LOOPNAME=$(<${DM_CONFNAME}-conf/LOOPNAME)
+
+
 ##### Load infos for dm
 
 DM_CONFNAME="kalaohardware"
@@ -80,21 +86,25 @@ if [ ! -f "$stepFile" ]; then
 
 
 mkdir -p ${WORKDIR}/hardware-workdir
-pushd ${WORKDIR}/hardware-workdir
-
-milk-fpsinit -e cacao -C -f ~/kalao-cacao/src/cacao/src/KalAO_BMC/fpslist.txt
-milk-fpsinit -e cacao -C -f ~/kalao-cacao/src/cacao/src/KalAO_Nuvu/fpslist.txt
-milk-fpsinit -e cacao -C -f ~/kalao-cacao/src/cacao/src/KalAO_SHWFS/fpslist.txt
-
-popd
+#pushd ${WORKDIR}/hardware-workdir
+#
+#milk-fpsinit -e cacao -C -f ~/kalao-cacao/src/cacao/src/KalAO_BMC/fpslist.txt
+#milk-fpsinit -e cacao -C -f ~/kalao-cacao/src/cacao/src/KalAO_Nuvu/fpslist.txt
+#milk-fpsinit -e cacao -C -f ~/kalao-cacao/src/cacao/src/KalAO_SHWFS/fpslist.txt
+#
+#popd
 
 cp -R kalao-hardware_configs/* ${WORKDIR}/hardware-workdir
 
-##### Launch processes dm loop
+##### Launch processes dmloopsim
+
+cacao-task-manager -X 4 "${LOOP_CONFNAME}"
+
+##### Launch processes hardware
 
 cacao-task-manager -X 4 "${DM_CONFNAME}"
 
-##### Launch processes dm loop
+##### Launch processes ttm loop
 
 cacao-task-manager -X 4 "${TTM_CONFNAME}"
 
