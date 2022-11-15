@@ -19,7 +19,7 @@ LOOP_CONFNAME="dmloopsim"
 LOOP_WORKDIR=$(<${LOOP_CONFNAME}-conf/WORKDIR)
 LOOP_LOOPNAME=$(<${LOOP_CONFNAME}-conf/LOOPNAME)
 
-source ${LOOP_CONFNAME}-conf/cacaovars.${LOOP_LOOPNAME}.bash
+#source ${LOOP_CONFNAME}-conf/cacaovars.${LOOP_LOOPNAME}.bash
 
 ##### Load infos for dm
 
@@ -30,7 +30,7 @@ HARDWARE_LOOPNAME=$(<${HARDWARE_CONFNAME}-conf/LOOPNAME)
 
 #source ${HARDWARE_CONFNAME}-conf/cacaovars.${HARDWARE_LOOPNAME}.bash
 
-DM_LOOPWORKDIR=$CACAO_LOOPWORKDIR
+DM_WORKDIR=$HARDWARE_WORKDIR #"kalaohardware-workdir" #$CACAO_LOOPWORKDIR
 #DM_CHINDEX=2
 DM_DMINDEX=$CACAO_DMINDEX
 #DM_LOOPNUMBER=$CACAO_LOOPNUMBER
@@ -43,7 +43,7 @@ TTM_CONFNAME="kalaohardware"
 TTM_WORKDIR=$(<${TTM_CONFNAME}-conf/WORKDIR)
 TTM_LOOPNAME=$(<${TTM_CONFNAME}-conf/LOOPNAME)
 
-source ${TTM_CONFNAME}-conf/cacaovars.${TTM_LOOPNAME}.bash
+#source ${TTM_CONFNAME}-conf/cacaovars.${TTM_LOOPNAME}.bash
 
 #TTM_LOOPWORKDIR=$CACAO_LOOPWORKDIR
 #TTM_CHINDEX=2
@@ -52,7 +52,7 @@ source ${TTM_CONFNAME}-conf/cacaovars.${TTM_LOOPNAME}.bash
 
 #####
 
-if [ $DM_LOOPWORKDIR != $TTM_LOOPWORKDIR ]
+if [ $DM_WORKDIR != $TTM_WORKDIR ]
 then
 	echo "DM and TTM workdir should be the same"
 	exit 1
