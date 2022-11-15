@@ -28,7 +28,7 @@ if [ "${CACAO_FPSPROC_BMCDISP}" = "ON" ]; then
         addfpscmd "setval ${fpsfname}.procinfo.triggermode 3"
         addfpscmd "setval ${fpsfname}.procinfo.triggersname dm${CACAO_DMINDEX}disp"
         addfpscmd "setval ${fpsfname}.procinfo.triggertimeout 0.0001"
-        addfpscmd "setval ${fpsname}.DMin dm${CACAO_DMINDEX}disp"
+        addfpscmd "setval ${fpsfname}.DMin dm${CACAO_DMINDEX}disp"
         addfpscmd "setval ${fpsfname}.TTMin dm${CACAO_DMINDEX}disp"
         addfpscmd "setval ${fpsfname}.ttm_tip_offset -0.05"
         addfpscmd "setval ${fpsfname}.ttm_tilt_offset 0.0"
