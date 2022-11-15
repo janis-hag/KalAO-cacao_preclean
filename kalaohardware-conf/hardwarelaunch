@@ -52,7 +52,7 @@ source ${TTM_CONFNAME}-conf/cacaovars.${TTM_LOOPNAME}.bash
 
 #####
 
-if [ $DM_WORKDIR != $TTM_WORKDIR ]
+if [ $DM_LOOPWORKDIR != $TTM_LOOPWORKDIR ]
 then
 	echo "DM and TTM workdir should be the same"
 	exit 1
