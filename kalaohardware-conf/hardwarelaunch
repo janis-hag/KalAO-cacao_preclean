@@ -103,7 +103,7 @@ cacao-task-manager -X 4 "${LOOP_CONFNAME}"
 
 ##### Launch processes hardware
 
-cacao-task-manager -X 4 "${DM_CONFNAME}"
+cacao-task-manager -X 4 "${HARDWARE_CONFNAME}"
 
 ##### Launch processes ttm loop
 
