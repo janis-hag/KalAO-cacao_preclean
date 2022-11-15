@@ -117,6 +117,8 @@ else
 echo "found ${stepFile} -> skipping"
 fi
 
+stepFile="step.aolaunch.HW"
+if [ ! -f "$stepFile" ]; then
 
 
 ##### Start hardware
@@ -124,12 +126,8 @@ fi
 # TODO use DMINDEX and LOOPNUMBER to define name
 sendFPScmd "runstart DMch2disp-01"
 
-sleep 10
-
 #sendFPScmd "confwupdate bmc_display"
 sendFPScmd "runstart bmc_display"
-
-sleep 10
 
 #sendFPScmd "confwupdate nuvu_acquire"
 sendFPScmd "runstart nuvu_acquire"
