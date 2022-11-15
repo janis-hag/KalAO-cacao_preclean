@@ -22,18 +22,18 @@ LOOP_LOOPNAME=$(<${LOOP_CONFNAME}-conf/LOOPNAME)
 
 ##### Load infos for dm
 
-DM_CONFNAME="kalaohardware"
+HARDWARE_CONFNAME="kalaohardware"
 
-DM_WORKDIR=$(<${DM_CONFNAME}-conf/WORKDIR)
-DM_LOOPNAME=$(<${DM_CONFNAME}-conf/LOOPNAME)
+HARDWARE_WORKDIR=$(<${HARDWARE_CONFNAME}-conf/WORKDIR)
+HARDWARE_LOOPNAME=$(<${HARDWARE_CONFNAME}-conf/LOOPNAME)
 
-source ${DM_CONFNAME}-conf/cacaovars.${DM_LOOPNAME}.bash
+#source ${HARDWARE_CONFNAME}-conf/cacaovars.${HARDWARE_LOOPNAME}.bash
 
 DM_LOOPWORKDIR=$CACAO_LOOPWORKDIR
-DM_CHINDEX=2
+#DM_CHINDEX=2
 DM_DMINDEX=$CACAO_DMINDEX
-DM_LOOPNUMBER=$CACAO_LOOPNUMBER
-DM_WFSSTREAM=$CACAO_WFSSTREAM
+#DM_LOOPNUMBER=$CACAO_LOOPNUMBER
+#DM_WFSSTREAM=$CACAO_WFSSTREAM
 
 ##### Load infos for ttm
 
@@ -44,10 +44,10 @@ TTM_LOOPNAME=$(<${TTM_CONFNAME}-conf/LOOPNAME)
 
 source ${TTM_CONFNAME}-conf/cacaovars.${TTM_LOOPNAME}.bash
 
-TTM_LOOPWORKDIR=$CACAO_LOOPWORKDIR
-TTM_CHINDEX=2
-TTM_DMINDEX=$CACAO_DMINDEX
-TTM_LOOPNUMBER=$CACAO_LOOPNUMBER
+#TTM_LOOPWORKDIR=$CACAO_LOOPWORKDIR
+#TTM_CHINDEX=2
+#TTM_DMINDEX=$CACAO_DMINDEX
+#TTM_LOOPNUMBER=$CACAO_LOOPNUMBER
 
 #####
 
@@ -84,7 +84,7 @@ if [ ! -f "$stepFile" ]; then
 
 ##### Launch processes common to both loops
 
-
+#TODO change hardware-workdir to hardware-setupfiles
 mkdir -p ${WORKDIR}/hardware-workdir
 #pushd ${WORKDIR}/hardware-workdir
 #
@@ -109,7 +109,9 @@ cacao-task-manager -X 4 "${DM_CONFNAME}"
 #cacao-task-manager -X 4 "${TTM_CONFNAME}"
 
 touch ${stepFile}
+
 exit
+
 else
 echo "found ${stepFile} -> skipping"
 fi
