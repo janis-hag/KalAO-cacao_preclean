@@ -17,7 +17,7 @@ if [ "${CACAO_FPSPROC_BMCDISP}" = "ON" ]; then
     else
         echolog "Adding process ${fpsname}"
 	# name_of_fps command_to_execute
-        echo "${fpsname}      KalAO_BMC.display"  >> fpslist.txt
+        echo "${fpsname}      KalAO_BMC.display     ${CACAO_DMINDEX}"  >> fpslist.txt
 
         addfpscmdheader
 
@@ -58,7 +58,7 @@ if [ "${CACAO_FPSPROC_NUVUACQ}" = "ON" ]; then
     else
         echolog "Adding process ${fpsname}"
 	# name_of_fps command_to_execute
-        echo "${fpsname}      KalAO_Nuvu.acquire"  >> fpslist.txt
+        echo "${fpsname}      KalAO_Nuvu.acquire        ${CACAO_DMINDEX}"  >> fpslist.txt
 
 
         addfpscmdheader
@@ -99,7 +99,7 @@ if [ "${CACAO_FPSPROC_SHWFSPROC}" = "ON" ]; then
     else
         echolog "Adding process ${fpsname}"
 	# name_of_fps command_to_execute
-        echo "${fpsname}    KalAO_SHWFS.process"  >> fpslist.txt
+        echo "${fpsname}    KalAO_SHWFS.process     ${CACAO_DMINDEX}"  >> fpslist.txt
 
 
         addfpscmdheader
