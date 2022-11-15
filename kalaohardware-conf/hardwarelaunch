@@ -19,7 +19,7 @@ LOOP_CONFNAME="dmloopsim"
 LOOP_WORKDIR=$(<${LOOP_CONFNAME}-conf/WORKDIR)
 LOOP_LOOPNAME=$(<${LOOP_CONFNAME}-conf/LOOPNAME)
 
-source ${HARDWARE_CONFNAME}-conf/cacaovars.${HARDWARE_LOOPNAME}.bash
+source ${LOOP_CONFNAME}-conf/cacaovars.${HARDWARE_LOOPNAME}.bash
 
 ##### Load infos for dm
 
