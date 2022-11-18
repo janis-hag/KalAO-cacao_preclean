@@ -86,7 +86,7 @@ if [ ! -f "$stepFile" ]; then
 ##### Launch processes common to both loops
 
 #TODO change hardware-workdir to hardware-setupfiles
-mkdir -p ${WORKDIR}/hardware-workdir
+mkdir -p ${WORKDIR}/hardware-setupfiles
 #pushd ${WORKDIR}/hardware-workdir
 #
 #milk-fpsinit -e cacao -C -f ~/kalao-cacao/src/cacao/src/KalAO_BMC/fpslist.txt
@@ -95,7 +95,7 @@ mkdir -p ${WORKDIR}/hardware-workdir
 #
 #popd
 
-cp -R kalao-hardware_configs/* ${WORKDIR}/hardware-workdir
+cp -R kalao-hardware_configs/* ${WORKDIR}/hardware-setupfiles
 
 ##### Launch processes dmloopsim
 
