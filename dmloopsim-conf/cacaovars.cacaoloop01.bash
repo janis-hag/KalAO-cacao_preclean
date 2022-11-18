@@ -13,7 +13,7 @@ export CACAO_DMxsize="12"
 export CACAO_DMysize="12"
 
 #export CACAO_LOOPWORKDIR="cacaoloop"
-export CACAO_LOOPWORKDIR=$(<WORKDIR)
+export CACAO_LOOPWORKDIR=$(<dmloopsim-conf/WORKDIR)
 export CACAO_DMINDEX="01"
 export CACAO_LOOPNUMBER="1"
 
