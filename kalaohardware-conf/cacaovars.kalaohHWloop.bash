@@ -12,7 +12,8 @@ export CACAO_DMSPATIAL="1"
 export CACAO_DMxsize="12"
 export CACAO_DMysize="12"
 
-export CACAO_LOOPWORKDIR=$(<kalaohardware-conf/WORKDIR)
+#export CACAO_LOOPWORKDIR=$(<kalaohardware-conf/WORKDIR)
+export CACAO_LOOPWORKDIR="kalaoHWloopWD"
 
 export CACAO_DMINDEX="01"
 export CACAO_LOOPNUMBER="1"
