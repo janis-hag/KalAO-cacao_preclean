@@ -137,7 +137,7 @@ sendFPScmd "runstart nuvu_acquire"
 
 waitFile "${MILK_SHM_DIR}/dm${DM_DMINDEX}disp00.im.shm"
 
-pushd ${WORKDIR}/hardware-workdir
+pushd ${WORKDIR}/hardware-setupfiles
 
 cacao << EOF
 loadfits "flat_dm.fits" dmflat
