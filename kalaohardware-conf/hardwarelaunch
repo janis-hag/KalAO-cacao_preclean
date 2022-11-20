@@ -20,7 +20,8 @@ LOOP_WORKDIR=$(<${LOOP_CONFNAME}-conf/WORKDIR)
 LOOP_LOOPNAME=$(<${LOOP_CONFNAME}-conf/LOOPNAME)
 
 # to be called rootdir
-LOOP_WORKDIR=${LOOP_LOOPNAME}-rootdir
+LOOP_ROOTDIR=${LOOP_LOOPNAME}-rootdir
+LOOP_RUNDIR=${LOOP_LOOPNAME}-rundir
 
 
 source ${LOOP_CONFNAME}-conf/cacaovars.${LOOP_LOOPNAME}.bash
@@ -29,12 +30,15 @@ source ${LOOP_CONFNAME}-conf/cacaovars.${LOOP_LOOPNAME}.bash
 
 HARDWARE_CONFNAME="kalaohardware"
 
-HARDWARE_WORKDIR=$(<${HARDWARE_CONFNAME}-conf/WORKDIR)
 HARDWARE_LOOPNAME=$(<${HARDWARE_CONFNAME}-conf/LOOPNAME)
+
+HARDWARE_ROOTDIR=${HARDWARE_LOOPNAME}-rootdir
+HARDWARE_RUNDIR=${HARDWARE_LOOPNAME}-rundir
 
 #source ${HARDWARE_CONFNAME}-conf/cacaovars.${HARDWARE_LOOPNAME}.bash
 
-DM_WORKDIR=$HARDWARE_WORKDIR #"kalaohardware-workdir" #$CACAO_LOOPWORKDIR
+#HARDWARE_ROOTDIR=$HARDWARE_WORKDIR #"kalaohardware-workdir" #$CACAO_LOOPWORKDIR
+
 #DM_CHINDEX=2
 DM_DMINDEX=$CACAO_DMINDEX
 #DM_LOOPNUMBER=$CACAO_LOOPNUMBER
@@ -42,31 +46,31 @@ DM_DMINDEX=$CACAO_DMINDEX
 
 ##### Load infos for ttm
 
-TTM_CONFNAME="kalaohardware"
-
-TTM_WORKDIR=$(<${TTM_CONFNAME}-conf/WORKDIR)
-TTM_LOOPNAME=$(<${TTM_CONFNAME}-conf/LOOPNAME)
-
-#source ${TTM_CONFNAME}-conf/cacaovars.${TTM_LOOPNAME}.bash
-
-#TTM_LOOPWORKDIR=$CACAO_LOOPWORKDIR
-#TTM_CHINDEX=2
-#TTM_DMINDEX=$CACAO_DMINDEX
-#TTM_LOOPNUMBER=$CACAO_LOOPNUMBER
-
-#####
-
-if [ $DM_WORKDIR != $TTM_WORKDIR ]
-then
-	echo "DM and TTM workdir should be the same"
-	exit 1
-fi
-
-WORKDIR=$TTM_WORKDIR
+#TTM_CONFNAME="kalaohardware"
+#
+#TTM_WORKDIR=$(<${TTM_CONFNAME}-conf/WORKDIR)
+#TTM_LOOPNAME=$(<${TTM_CONFNAME}-conf/LOOPNAME)
+#
+##source ${TTM_CONFNAME}-conf/cacaovars.${TTM_LOOPNAME}.bash
+#
+##TTM_LOOPWORKDIR=$CACAO_LOOPWORKDIR
+##TTM_CHINDEX=2
+##TTM_DMINDEX=$CACAO_DMINDEX
+##TTM_LOOPNUMBER=$CACAO_LOOPNUMBER
+#
+######
+#
+#if [ $HARDWARE_ROOTDIR != $TTM_WORKDIR ]
+#then
+#	echo "DM and TTM workdir should be the same"
+#	exit 1
+#fi
+#
+#WORKDIR=$TTM_WORKDIR
 
 function sendFPScmd {
   echo "SENDING: $1"
-  echo "$1" >> ${MILK_SHM_DIR}/${TTM_CONFNAME}_fpsCTRL.fifo
+  echo "$1" >> ${MILK_SHM_DIR}/${HARDWARE_LOOPNAME}_fpsCTRL.fifo
 }
 
 function waitFile {
@@ -99,7 +103,8 @@ if [ ! -f "$stepFile" ]; then
 #
 #popd
 
-cp -R kalao-hardware_configs/* ${WORKDIR}
+#cp -R kalao-hardware_configs/* ${HARDWARE_ROOTDIR}
+cp -R kalao-hardware_configs/* ${HARDWARE_ROOTDIR}/${HARDWARE_RUNDIR}
 
 ##### Launch processes dmloopsim
 
@@ -141,7 +146,7 @@ sendFPScmd "runstart nuvu_acquire"
 
 waitFile "${MILK_SHM_DIR}/dm${DM_DMINDEX}disp00.im.shm"
 
-pushd ${WORKDIR}/hardware-setupfiles
+pushd ${HARDWARE_ROOTDIR}/${HARDWARE_RUNDIR} #${HARDWARE_ROOTDIR}/hardware-setupfiles
 
 cacao << EOF
 loadfits "flat_dm.fits" dmflat
@@ -186,7 +191,7 @@ if [ ! -f "$stepFile" ]; then
 
 sendFPScmd "waitonrunOFF"
 
-pushd ${WORKDIR}/${DM_LOOPWORKDIR}
+pushd ${HARDWARE_ROOTDIR}/${HARDWARE_RUNDIR}
 
 cacao << EOF
 loadfits "fps.compsCM-1.datadir/sCMat00.fits" sCMat00_1
