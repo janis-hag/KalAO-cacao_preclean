@@ -104,7 +104,6 @@ if [ ! -f "$stepFile" ]; then
 #popd
 
 #cp -R kalao-hardware_configs/* ${HARDWARE_ROOTDIR}
-cp -R kalao-hardware_configs/* ${HARDWARE_ROOTDIR}/${HARDWARE_RUNDIR}
 
 ##### Launch processes dmloopsim
 
@@ -113,6 +112,8 @@ cacao-task-manager -X 4 "${LOOP_CONFNAME}"
 ##### Launch processes hardware
 
 cacao-task-manager -X 4 "${HARDWARE_CONFNAME}"
+
+cp -R kalao-hardware_configs/* ${HARDWARE_ROOTDIR}/${HARDWARE_RUNDIR}
 
 ##### Launch processes ttm loop
 
