@@ -12,7 +12,7 @@ export CACAO_DMSPATIAL="1"
 export CACAO_DMxsize="12"
 export CACAO_DMysize="12"
 
-export CACAO_LOOPWORKDIR="dmloop-workdir"
+export CACAO_LOOPWORKDIR="kalaohardware-workdir"
 export CACAO_DMINDEX="01"
 export CACAO_LOOPNUMBER="1"
 
@@ -25,59 +25,16 @@ export CACAO_LOOPDATALOGDIR="$(pwd)/datalogdir"
 #       FPS processes to be set up
 # ========================================
 
-# DM combination
-# Manages mutipe DM channels
+# BMC DM hardware control
 #
-export CACAO_FPSPROC_DMCH2DISP="ON"
+export CACAO_FPSPROC_BMCDISP="ON"
 
-# Delay stream: emulates time lag in hardware
-# Used to simulate a time lag
+
+# NUVU acquisition: read raw nuvu stream and reformats into clean stream
 #
-export CACAO_FPSPROC_STREAMDELAY="ON"
+export CACAO_FPSPROC_NUVUACQ="ON"
 
-# MVM lop on GPU: used to simulate hardware
+# SHWFS processing: reads nuvu stream and process Shack-Hartman slopes
 #
-export CACAO_FPSPROC_SIMMVMGPU="ON"
+export CACAO_FPSPROC_SHWFSPROC="ON"
 
-# Measure hardware latency
-#
-export CACAO_FPSPROC_MLAT="ON"
-
-# Acquire WFS stream
-#
-export CACAO_FPSPROC_ACQUWFS="ON"
-
-# Acquire linear RM (zonal)
-#
-export CACAO_FPSPROC_ACQLINZRM="ON"
-
-# Acquire low-order modal RM
-#
-export CACAO_FPSPROC_ACQLINLORM="ON"
-
-
-# Compute control matrix - Fourier
-#
-export CACAO_FPSPROC_COMPFCM="ON"
-
-# Compute control matrix - straight
-#
-export CACAO_FPSPROC_COMPSCM="ON"
-
-
-# Extract control modes
-#
-export CACAO_FPSPROC_MODESEXTRACTWFSGPU="ON"
-
-# Control loop
-#
-export CACAO_FPSPROC_AOLOOP_RUN="ON"
-
-# Extract control modes from WFS using MVM
-export CACAO_FPSPROC_MVMGPU_WFS2CMODEVAL="ON"
-
-# Modal control filtering
-export CACAO_FPSPROC_MODALFILTERING="ON"
-
-# Compute DM command from control mode values
-export CACAO_FPSPROC_MVMGPU_CMODEVAL2DM="ON"

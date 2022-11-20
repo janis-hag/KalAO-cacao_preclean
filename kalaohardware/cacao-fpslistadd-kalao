@@ -1,4 +1,3 @@
-
 if [ "${CACAO_FPSPROC_BMCDISP}" = "ON" ]; then
     echolog "ON  CACAO_FPSPROC_BMCDISP"
     # ==============================================================================
@@ -23,7 +22,7 @@ if [ "${CACAO_FPSPROC_BMCDISP}" = "ON" ]; then
         addfpscmdheader
 
     	addfpscmd "setval ${fpsfname}.conf.taskset 1"
-	addfpscmd "setval ${fpsfname}.procinfo.RTprio 8"
+	    addfpscmd "setval ${fpsfname}.procinfo.RTprio 8"
     	# infinite loop
         addfpscmd "setval ${fpsfname}.procinfo.loopcntMax -1"
         addfpscmd "setval ${fpsfname}.procinfo.triggermode 3"
@@ -59,7 +58,7 @@ if [ "${CACAO_FPSPROC_NUVUACQ}" = "ON" ]; then
     else
         echolog "Adding process ${fpsname}"
 	# name_of_fps command_to_execute
-        echo "${fpsname}      KalAO_Nuvu.acquire        ${CACAO_LOOPNUMBER}"  >> fpslist.txt
+        echo "${fpsname}      KalAO_Nuvu.acquire        ${CACAO_DMINDEX}"  >> fpslist.txt
 
 
         addfpscmdheader
@@ -100,7 +99,7 @@ if [ "${CACAO_FPSPROC_SHWFSPROC}" = "ON" ]; then
     else
         echolog "Adding process ${fpsname}"
 	# name_of_fps command_to_execute
-        echo "${fpsname}    KalAO_SHWFS.process     ${CACAO_LOOPNUMBER}"  >> fpslist.txt
+        echo "${fpsname}    KalAO_SHWFS.process     ${CACAO_DMINDEX}"  >> fpslist.txt
 
 
         addfpscmdheader

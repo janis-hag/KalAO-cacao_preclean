@@ -19,6 +19,10 @@ LOOP_CONFNAME="dmloopsim"
 LOOP_WORKDIR=$(<${LOOP_CONFNAME}-conf/WORKDIR)
 LOOP_LOOPNAME=$(<${LOOP_CONFNAME}-conf/LOOPNAME)
 
+# to be called rootdir
+LOOP_WORKDIR=${LOOP_LOOPNAME}-rootdir
+
+
 source ${LOOP_CONFNAME}-conf/cacaovars.${LOOP_LOOPNAME}.bash
 
 ##### Load infos for dm
@@ -86,7 +90,7 @@ if [ ! -f "$stepFile" ]; then
 ##### Launch processes common to both loops
 
 #TODO change hardware-workdir to hardware-setupfiles
-mkdir -p ${WORKDIR}/hardware-setupfiles
+#mkdir -p ${WORKDIR}/hardware-setupfiles
 #pushd ${WORKDIR}/hardware-workdir
 #
 #milk-fpsinit -e cacao -C -f ~/kalao-cacao/src/cacao/src/KalAO_BMC/fpslist.txt
@@ -95,7 +99,7 @@ mkdir -p ${WORKDIR}/hardware-setupfiles
 #
 #popd
 
-cp -R kalao-hardware_configs/* ${WORKDIR}/hardware-setupfiles
+cp -R kalao-hardware_configs/* ${WORKDIR}
 
 ##### Launch processes dmloopsim
 
