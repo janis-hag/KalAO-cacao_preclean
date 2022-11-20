@@ -16,7 +16,7 @@ source milk-argparse
 
 
 LOOP_CONFNAME="dmloopsim"
-LOOP_WORKDIR=$(<${LOOP_CONFNAME}-conf/WORKDIR)
+#LOOP_WORKDIR=$(<${LOOP_CONFNAME}-conf/WORKDIR)
 LOOP_LOOPNAME=$(<${LOOP_CONFNAME}-conf/LOOPNAME)
 
 # to be called rootdir
