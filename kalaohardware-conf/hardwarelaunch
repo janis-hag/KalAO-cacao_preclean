@@ -200,6 +200,6 @@ exitCLI
 EOF
 
 popd
-
+fi
 #sendFPScmd "confwupdate loopRUN-${DM_LOOPNUMBER}"
 
