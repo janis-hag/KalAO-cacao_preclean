@@ -31,7 +31,7 @@ if [ "${CACAO_FPSPROC_BMCDISP}" = "ON" ]; then
         addfpscmd "setval ${fpsfname}.procinfo.triggertimeout 0.0001"
         addfpscmd "setval ${fpsfname}.DMin dm${CACAO_DMINDEX}disp"
         addfpscmd "setval ${fpsfname}.TTMin dm${CACAO_DMINDEX}disp"
-        addfpscmd "setval ${fpsfname}.ttm_tip_offset -0.05"
+        addfpscmd "setval ${fpsfname}.ttm_tip_offset -0.85"
         addfpscmd "setval ${fpsfname}.ttm_tilt_offset 0.0"
 
     fi
@@ -48,7 +48,7 @@ if [ "${CACAO_FPSPROC_NUVUACQ}" = "ON" ]; then
 
     # FPS name
     fpsname="nuvu_acquire"
-    fpsarg0="${CACAO_DMINDEX}"
+    fpsarg0="${CACAO_LOOPNUMBER}"
 
     # FPS full name
     fpsfname="${fpsname}-${fpsarg0}"
@@ -89,7 +89,7 @@ if [ "${CACAO_FPSPROC_SHWFSPROC}" = "ON" ]; then
 
     # FPS name
     fpsname="shwfs_process"
-    fpsarg0="${CACAO_DMINDEX}"
+    fpsarg0="${CACAO_LOOPNUMBER}"
 
     # FPS full name
     fpsfname="${fpsname}-${fpsarg0}"
