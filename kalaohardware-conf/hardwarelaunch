@@ -24,7 +24,7 @@ LOOP_ROOTDIR=${LOOP_LOOPNAME}-rootdir
 LOOP_RUNDIR=${LOOP_LOOPNAME}-rundir
 
 
-source ${LOOP_CONFNAME}-conf/cacaovars.${LOOP_LOOPNAME}.bash
+source ${LOOP_CONFNAME}-conf/cacaovars.bash
 
 ##### Load infos for dm
 
@@ -138,6 +138,12 @@ sendFPScmd "runstart DMch2disp-01"
 
 #sendFPScmd "confwupdate bmc_display"
 sendFPScmd "runstart bmc_display"
+
+
+#Temporary fix for the process name change
+if [ ! -f /tmp/milk/shwfs_process.fps.shm ]; then
+	ln -s /tmp/milk/shwfs_process-1.fps.shm /tmp/milk/shwfs_process.fps.shm
+fi
 
 #sendFPScmd "confwupdate nuvu_acquire"
 sendFPScmd "runstart nuvu_acquire"
