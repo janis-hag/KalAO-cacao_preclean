@@ -50,12 +50,12 @@ export CACAO_FPSPROC_DMCH2DISP="ON"
 
 # Delay stream: emulates time lag in hardware
 # Used to simulate a time lag
-#
-#export CACAO_FPSPROC_STREAMDELAY="ON"
+# should not be needed
+export CACAO_FPSPROC_STREAMDELAY="ON"
 
 # MVM lop on GPU: used to simulate hardware
-#
-#export CACAO_FPSPROC_SIMMVMGPU="ON"
+# should not be needed
+export CACAO_FPSPROC_SIMMVMGPU="ON"
 
 # Measure hardware latency
 #
