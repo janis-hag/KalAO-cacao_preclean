@@ -7,3 +7,5 @@ step.*
 *rootdir
 kalao-workdir-*/
 kalao-workdir_*/
+*.tgz
+
