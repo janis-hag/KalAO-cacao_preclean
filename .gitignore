@@ -5,5 +5,5 @@ step.*
 *-workdir
 *datadir*
 *rootdir
-kalao-workdir-*
-kalao-workdir_*
+kalao-workdir-*/
+kalao-workdir_*/
