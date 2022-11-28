@@ -19,9 +19,12 @@ LOOP_CONFNAME="dmloopsim"
 #LOOP_WORKDIR=$(<${LOOP_CONFNAME}-conf/WORKDIR)
 LOOP_LOOPNAME=$(<${LOOP_CONFNAME}-conf/LOOPNAME)
 
+TTMLOOP_CONFNAME="cacaottmloop"
+TTMLOOP_LOOPNAME=$(<${LOOP_CONFNAME}-conf/LOOPNAME)
+
 # to be called rootdir
-LOOP_ROOTDIR=${LOOP_LOOPNAME}-rootdir
-LOOP_RUNDIR=${LOOP_LOOPNAME}-rundir
+#LOOP_ROOTDIR=${LOOP_LOOPNAME}-rootdir
+#LOOP_RUNDIR=${LOOP_LOOPNAME}-rundir
 
 
 source ${LOOP_CONFNAME}-conf/cacaovars.bash
@@ -109,6 +112,8 @@ if [ ! -f "$stepFile" ]; then
 
 cacao-task-manager -X 4 "${LOOP_CONFNAME}"
 
+cacao-task-manager -X 4 "${TTMLOOP_CONFNAME}"
+
 ##### Launch processes hardware
 
 cacao-task-manager -X 4 "${HARDWARE_CONFNAME}"
@@ -135,6 +140,8 @@ if [ ! -f "$stepFile" ]; then
 
 # TODO use DMINDEX and LOOPNUMBER to define name
 sendFPScmd "runstart DMch2disp-01"
+
+sendFPScmd "runstart DMch2disp-02"
 
 #sendFPScmd "confwupdate bmc_display"
 sendFPScmd "runstart bmc_display"
