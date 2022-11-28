@@ -1,1 +1,0 @@
-fps.acqlin_zRM-1.datadir/zrespM_mn.fits  # 20221109073628.866385262        1 [3052262 3052262] InputCommandFile
