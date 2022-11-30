@@ -1,7 +1,7 @@
 # cacao environment variables for setup
 # This file will be sourced by cacao-setup
 
-
+export CACAO_LOOPNAME="dmloop"
 export CACAO_LOOPNUMBER="1"
 
 
@@ -25,10 +25,10 @@ export CACAO_DMSPATIAL="1"
 # ====== DIRECTORIES ================
 
 # Optional. If not defined, will take value "LOOPNAME-rootdir"
-# export CACAO_LOOPROOTDIR="dmloop"
+export CACAO_LOOPROOTDIR="dmloop-rootdir"
 
 # Optional. If not defined, will take value "LOOPNAME-rundir"
-# export CACAO_LOOPRUNDIR="dmloop"
+export CACAO_LOOPRUNDIR="dmloop-rundir"
 
 
 
